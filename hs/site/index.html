@@ -208,9 +208,10 @@ footer{color:var(--muted);font-size:.8rem;text-align:center;padding:30px 0 40px}
   .bar{grid-template-columns:80px 1fr 34px}
   nav{margin-left:0;width:100%;justify-content:space-between}
   nav button{padding:5px 9px}
-  .hero{aspect-ratio:auto;height:540px}
-  .hero .veil{background:linear-gradient(180deg,rgba(30,20,12,.15),rgba(30,20,12,.7))}
-  .hero .copy{top:auto;bottom:24px;transform:none;max-width:88%}
+  .hero{aspect-ratio:auto;height:auto;min-height:0;background:#3a2a1e}
+  .hero img{position:static;height:auto;aspect-ratio:16/9}
+  .hero .veil{display:none}
+  .hero .copy{position:static;transform:none;max-width:none;padding:16px 18px 22px}
   .kpis{margin-top:14px;padding:0;grid-template-columns:repeat(2,1fr);gap:10px}
   .kpi{padding:12px}
   .kpi .n{font-size:1.5rem}
