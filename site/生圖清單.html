@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>生圖清單</title>
+<style>
+:root{--bg:#f5f0e6;--paper:#fffcf5;--ink:#2b2622;--muted:#7a6f64;--line:#e3d9c8;--accent:#a23b2a;--soft:#f3e2da;--ok:#2f7a4f;--oksoft:#e1f1e6}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1b1916;--paper:#24211d;--ink:#ece6dd;--muted:#a59a8d;--line:#3a352f;--accent:#e08a74;--soft:#3c2a24;--ok:#7cc79a;--oksoft:#1f3328}}
+:root[data-theme="dark"]{--bg:#1b1916;--paper:#24211d;--ink:#ece6dd;--muted:#a59a8d;--line:#3a352f;--accent:#e08a74;--soft:#3c2a24;--ok:#7cc79a;--oksoft:#1f3328}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Serif TC","PMingLiU",serif;line-height:1.75}
+.wrap{max-width:980px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:1.6rem;margin:0 0 4px;letter-spacing:.1em}
+h2{font-size:1.15rem;margin:30px 0 10px;border-left:5px solid var(--accent);padding-left:10px}
+.meta{color:var(--muted);font-size:.88rem}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+.style{background:var(--soft);border-color:transparent}
+.item{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start}
+.thumb{width:96px;height:72px;border-radius:8px;border:2px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.75rem;overflow:hidden;background:var(--bg)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.done .thumb{border:2px solid var(--ok)}
+.fn{font-family:Consolas,monospace;font-weight:700;color:var(--accent)}
+.done .fn::after{content:"  ✓ 已放入";color:var(--ok);font-family:inherit;font-size:.85rem}
+.size{font-size:.82rem;color:var(--muted);margin-left:8px}
+.where{font-size:.85rem;color:var(--muted)}
+.prompt{margin-top:4px}
+button{font:inherit;font-size:.85rem;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:999px;padding:4px 14px;cursor:pointer;white-space:nowrap}
+button.copied{background:var(--ok);border-color:var(--ok)}
+.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.count{font-weight:700}
+label{font-size:.88rem;color:var(--muted);cursor:pointer}
+@media (max-width:600px){.item{grid-template-columns:1fr}.thumb{width:100%;height:120px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>生圖清單</h1>
+  <p class="meta">做好的圖放進 <b>site/art/</b> 資料夾，檔名照下面的紅字（.jpg、.png、.webp 都可以）。放好後重新整理這一頁，會打勾並顯示縮圖；網站那邊重新整理也會自動換上。</p>
+  <div class="bar"><span class="count" id="count"></span>
+    <label><input type="checkbox" id="withStyle" checked> 複製時自動接上「統一風格」</label>
+    <a href="index.html" style="color:var(--accent)">← 回練習場</a></div>
+
+  <h2>統一風格</h2>
+  <div class="box style item" style="grid-template-columns:1fr auto">
+    <div id="styleText">宣紙質感背景，水墨淡彩插畫，大量留白，低飽和的米黃、墨灰、淡青色調，只用一點朱紅點綴，筆觸溫潤，畫面安靜典雅。畫面中不要出現任何文字、書法字或印章文字。</div>
+    <button data-copy="style">複製</button>
+  </div>
+  <p class="meta">AI 畫出來的中文字常常是錯字，所以每張都要求「不要文字」，標題由網頁疊上去。主視覺和橫幅的<b>左半邊要留白或暗一點</b>，白色標題才看得清楚。</p>
+
+  <div id="list"></div>
+</div>
+<script>
+const SECTIONS = [
+ ['一、主視覺與頁面橫幅（建議先做）', [
+  ['hero','2400×1000（12:5）','首頁最上方大圖','一位古代書生坐在窗邊書案前讀竹簡，窗外遠山與松樹，案上有硯台、毛筆、一盞燈。人物放在畫面右側三分之一，左側是大片淡墨遠山與留白。'],
+  ['banner-method','2400×600（4:1）','拆解心法頁橫幅','書案俯視：攤開的古書、朱筆、幾枚書籤，彷彿正在逐句圈點批注。主體放在右側，左側留白。'],
+  ['banner-bank','2400×600（4:1）','題庫頁橫幅','古代藏書閣的一排書架，堆滿線裝書與竹簡卷軸，光線從右側窗戶斜射進來。主體在右，左側淡化。'],
+  ['banner-practice','2400×600（4:1）','練習頁橫幅','一條蜿蜒的山間石階小路通往遠處涼亭，象徵循序漸進。路與亭在右側，左側是霧氣與留白。'],
+  ['banner-wrong','2400×600（4:1）','錯題本頁橫幅','一盞油燈旁放著一本翻開的筆記與一枝筆，夜深溫暖，帶「回頭複習」的寧靜感。主體在右。'],
+  ['empty','800×800（1:1，裁成圓形）','錯題本沒有錯題時','一隻小書僮抱著書本開心微笑，簡潔可愛，主體置中，四周留白。'],
+ ]],
+ ['二、九種文本類型卡片（1200×900，4:3）', [
+  ['g-fable','1200×900','寓言故事','守株待兔的意境：農夫倚著樹樁，一隻兔子在旁邊，田野簡潔，帶一點幽默感。'],
+  ['g-history','1200×900','史傳人物','古代宮殿階前，一位文官手持笏板向君王進諫，人物剪影莊重。'],
+  ['g-argument','1200×900','說理議論','兩位古人在松下對坐辯論，一人伸手比劃，桌上有茶與書卷。'],
+  ['g-travel','1200×900','山水遊記','一位旅人拄杖立於山崖，遠望層疊山水與瀑布雲霧。'],
+  ['g-notes','1200×900','筆記小品','文人在燈下以小楷隨手記事，桌上散放紙箋、茶杯與一枝梅。'],
+  ['g-letter','1200×900','書信序跋','一封摺好的古代家書與信封、毛筆、蠟燭，暖色調，帶思念之情。'],
+  ['g-classics','1200×900','經典語錄','孔子坐於杏樹下為弟子講學，弟子圍坐聆聽，杏花飄落。'],
+  ['g-poetry','1200×900','古典詩詞曲','月夜小舟泊於江上，一人舉杯望月，水面月影搖曳。'],
+  ['g-other','1200×900','其他（對聯、題辭、常識）','古宅門口貼著空白紅色對聯紙（紙上不要寫字），門前燈籠與石階。'],
+ ]],
+ ['三、七步心法圖示（512×512，1:1，裁成圓形）', [
+  ['step1','512×512','步驟一：先看題','扁平的水墨小圖示，單一主體，淡朱紅素底：一支放大鏡壓在一張考卷上。'],
+  ['step2','512×512','步驟二：通讀圈卡','扁平的水墨小圖示，單一主體，淡朱紅素底：一支毛筆在紙上畫出圓圈。'],
+  ['step3','512×512','步驟三：斷句切塊','扁平的水墨小圖示，單一主體，淡朱紅素底：一把小刀把一條竹簡切成幾段。'],
+  ['step4','512×512','步驟四：圈人補主','扁平的水墨小圖示，單一主體，淡朱紅素底：幾個小人偶，其中一個頭上有箭頭指著。'],
+  ['step5','512×512','步驟五：換詞重述','扁平的水墨小圖示，單一主體，淡朱紅素底：兩個對話框，中間一個交換的箭頭。'],
+  ['step6','512×512','步驟六：理出結構','扁平的水墨小圖示，單一主體，淡朱紅素底：由幾個方塊與箭頭組成的流程圖，用毛筆畫成。'],
+  ['step7','512×512','步驟七：回原文對證','扁平的水墨小圖示，單一主體，淡朱紅素底：一枚朱紅印章蓋在打勾的地方。'],
+ ]],
+ ['四、網站小圖示（選做）', [
+  ['logo','512×512','左上角標誌','圓角方形的朱紅印章風格圖示，中間是一本打開的線裝書與一枝毛筆的簡化圖形，不要文字。'],
+ ]],
+];
+const EXTS = ['jpg','png','webp'];
+const total = SECTIONS.reduce((s,[,a])=>s+a.length,0);
+let have = 0;
+const list = document.getElementById('list');
+list.innerHTML = SECTIONS.map(([title, rows]) => `<h2>${title}</h2>` + rows.map(([fn,size,where,p]) => `
+  <div class="box item" id="i-${fn}">
+    <div class="thumb">未放</div>
+    <div><span class="fn">${fn}</span><span class="size">${size}</span><div class="where">${where}</div><div class="prompt">${p}</div></div>
+    <button data-copy="${fn}">複製提示詞</button>
+  </div>`).join('')).join('');
+const promptOf = Object.fromEntries(SECTIONS.flatMap(([,a]) => a.map(r => [r[0], r[3]])));
+const updCount = () => document.getElementById('count').textContent = `已放入 ${have} / ${total} 張`;
+updCount();
+Object.keys(promptOf).forEach(fn => {
+  const img = new Image(); let i = 0;
+  img.onload = () => { const box = document.getElementById('i-'+fn); box.classList.add('done'); const t = box.querySelector('.thumb'); t.textContent=''; t.appendChild(img); have++; updCount(); };
+  img.onerror = () => { if (++i < EXTS.length) img.src = `art/${fn}.${EXTS[i]}`; };
+  img.src = `art/${fn}.${EXTS[0]}`;
+});
+document.addEventListener('click', async e => {
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  const style = document.getElementById('styleText').textContent;
+  const k = b.dataset.copy;
+  const text = k === 'style' ? style : (document.getElementById('withStyle').checked ? style + '\n' + promptOf[k] : promptOf[k]);
+  try { await navigator.clipboard.writeText(text); }
+  catch(err){ const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+  const old = b.textContent; b.textContent = '已複製'; b.classList.add('copied');
+  setTimeout(() => { b.textContent = old; b.classList.remove('copied'); }, 1400);
+});
+</script>
+</body>
+</html>

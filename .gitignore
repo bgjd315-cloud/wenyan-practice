@@ -1,0 +1,10 @@
+# 原始下載檔與中間產物（體積大，留在本機）
+raw/*
+!raw/data/
+!raw/research.md
+!raw/method.html
+!raw/BRIEF.md
+site/art/_raw/
+.claude/
+生圖清單.json
+__pycache__/
