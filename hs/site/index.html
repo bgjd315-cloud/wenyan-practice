@@ -121,7 +121,7 @@ h3{font-size:1.05rem;margin:20px 0 8px}
 .tcard .ico{width:56px;height:56px;border-radius:14px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:1.6rem}
 .tcard a{color:var(--accent)}
 .tag.tc{background:var(--ok-soft);color:var(--ok)}
-.method .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;position:sticky;top:64px;background:var(--paper);padding:8px 0;z-index:2;border-bottom:1px solid var(--line)}
+.method .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;position:sticky;top:var(--hdr);background:var(--paper);padding:8px 0;z-index:2;border-bottom:1px solid var(--line)}
 .method .toc a{font-size:.88rem;border:1px solid var(--line);border-radius:999px;padding:2px 12px;text-decoration:none}
 .method .cat{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:16px 0;background:var(--bg)}
 .method .cat h3{margin-top:0}
@@ -169,7 +169,7 @@ select,input[type=search],input[type=number]{font:inherit;font-size:.9rem;paddin
 .qblock{padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
 .opts{display:flex;gap:8px;margin-top:6px}
 .qblock.wide{grid-column:1/-1}
-.qblock textarea{display:block;width:100%;min-height:110px;margin-top:6px;font:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);resize:vertical}
+.qblock textarea{display:block;width:100%;min-height:110px;margin-top:6px;font-family:inherit;font-size:.95rem;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);resize:vertical}
 .refans{background:var(--accent-soft);border-radius:8px;padding:10px 14px;margin:6px 0;white-space:pre-wrap}
 .refans b{color:var(--accent);display:block}
 .opt{font:inherit;flex:1;padding:6px 0;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer;font-weight:900}
@@ -204,7 +204,18 @@ select,input[type=search],input[type=number]{font:inherit;font-size:.9rem;paddin
 /* ---------- empty state ---------- */
 .emptyart{max-width:260px;margin:10px auto;aspect-ratio:1;border-radius:50%}
 footer{color:var(--muted);font-size:.8rem;text-align:center;padding:30px 0 40px}
+
+/* ---------- a11y / sticky header offset (--hdr 由 JS 依實際表頭高度設定) ---------- */
+:root{--hdr:64px}
+#pArea{scroll-margin-top:calc(var(--hdr) + 12px)}
+#pArea:not(:empty){min-height:calc(100vh - var(--hdr))}
+.method [id]{scroll-margin-top:calc(var(--hdr) + 64px)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.opt.right::after{content:" ✓"}
+.opt.wrong::after{content:" ✕"}
+button.switch{background:none;border:0;border-bottom:1px dashed;padding:0;font:inherit;font-size:.85rem;color:var(--accent)}
 @media (max-width:640px){
+  select,input[type=search],input[type=number],textarea{font-size:16px}
   .bar{grid-template-columns:80px 1fr 34px}
   nav{margin-left:0;width:100%;justify-content:space-between}
   nav button{padding:5px 9px}
@@ -320,7 +331,7 @@ function art(name, size, cls = '', inner = ''){ return `<div class="art ${cls}" 
 
 /* ---------- nav ---------- */
 function show(v){
-  document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  document.querySelectorAll('#nav button').forEach(b => { b.classList.toggle('on', b.dataset.v === v); if (b.dataset.v === v) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
   document.querySelectorAll('main > div').forEach(d => d.classList.toggle('hidden', d.id !== 'v-' + v));
   if (v === 'wrong') renderWrong();
   if (v === 'overview') renderOverview();
@@ -412,7 +423,7 @@ function filterUI(id, extra=''){
 }
 function readFilters(id){ const f = {}; document.querySelectorAll(`#${id} [data-f]`).forEach(el => f[el.dataset.f] = el.value); return f; }
 function applyFilters(f){
-  return ITEMS.filter(i => (!f.kind || i.kind===f.kind) && i.year >= +f.y0 && i.year <= +f.y1 &&
+  return ITEMS.filter(i => (!f.kind || i.kind===f.kind) && i.year >= Math.min(+f.y0, +f.y1) && i.year <= Math.max(+f.y0, +f.y1) &&
     (!f.genre || i.genre===f.genre) && (!f.tc || i.textcat===f.tc || i.textcat2===f.tc) && (!f.type || (i.types||[]).includes(f.type)) && (!f.form || i.form===f.form) &&
     (!f.diff || i.difficulty===f.diff) && (!f.qt || (i.questions||[]).some(q => (q.qtype||'單選')===f.qt)) &&
     (!f.q || [i.source,i.author,i.passage,i.translation,i.label].join(' ').includes(f.q)));
@@ -457,22 +468,24 @@ function renderPracticeHome(){
   $('#go').onclick = () => {
     const f = readFilters('fp'); let list = applyFilters(f);
     if (f.order === 'new') list = list.filter(i => (i.questions||[]).every(q => done[i.id+'#'+q.n] === undefined));
-    if (f.order !== 'seq') list = list.sort(() => Math.random() - .5);
+    if (f.order !== 'seq') list = shuffle(list);
     const n = Math.max(1, +f.n || 10), out = []; let c = 0;
     for (const i of list){ if (c >= n) break; out.push(i); c += (i.questions||[]).length; }
     if (!out.length){ $('#pArea').innerHTML = '<div class="empty">沒有符合條件的題目</div>'; return; }
     startPractice(out, 0);
   };
 }
-function startPractice(list, idx){ queue = list; qi = idx; show('practice'); renderQ(); }
+function shuffle(a){ a = a.slice(); for (let k = a.length - 1; k > 0; k--){ const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; }
+/* 開始作答時直接捲到題目，手機上不用再滑過橫幅和篩選列 */
+function startPractice(list, idx){ queue = list; qi = idx; show('practice'); renderQ(); $('#pArea').scrollIntoView(); }
 function renderQ(){
   const i = queue[qi]; if (!i) return;
   const qs = i.questions || [];
   $('#pArea').innerHTML = `<div class="card qcard">
     <div class="progress"><i style="width:${(qi+1)/queue.length*100}%"></i></div>
     <div class="qhead"><div><b>${esc(i.label)}</b>　<span class="meta">第 ${qi+1} / ${queue.length} 組　${STARS[i.difficulty]||''}</span></div>
-      <span class="switch" id="txtTog">顯示文字版</span></div>
-    <img class="qimg" src="${esc(i.img)}" alt="${esc(i.label)} 原題截圖">
+      <button type="button" class="switch" id="txtTog" aria-expanded="false" aria-controls="txtVer">顯示文字版</button></div>
+    <img class="qimg" src="${esc(i.img)}" alt="${esc(i.label)} 原題截圖（可按「顯示文字版」閱讀題目文字）" decoding="async">
     <div id="txtVer" class="hidden txtv">${i.passage && i.form==='題組' ? `<div class="qblock passage">${esc(i.passage)}</div>` : ''}
       ${qs.map(q => `<div class="qblock"><b>${q.n}.</b> ${esc(q.stem)}<br>${Object.entries(q.options||{}).map(([k,v])=>`(${k}) ${esc(v)}`).join('<br>')}</div>`).join('')}</div>
     <div class="answers">${qs.map(q => answerBox(q)).join('')}</div>
@@ -486,9 +499,10 @@ function renderQ(){
     const multi = b.dataset.qt === '多選', cur = new Set(multi ? (pick[b.dataset.n] || '') : '');
     if (multi) cur.has(k) ? cur.delete(k) : cur.add(k); else cur.add(k);
     pick[b.dataset.n] = [...cur].sort().join('');
-    b.querySelectorAll('.opt').forEach(o => o.classList.toggle('sel', cur.has(o.dataset.k)));
+    b.querySelectorAll('.opt').forEach(o => { o.classList.toggle('sel', cur.has(o.dataset.k)); o.setAttribute('aria-pressed', cur.has(o.dataset.k)); });
   });
-  $('#txtTog').onclick = () => $('#txtVer').classList.toggle('hidden');
+  $('#txtTog').onclick = () => { const open = !$('#txtVer').classList.toggle('hidden'); $('#txtTog').setAttribute('aria-expanded', open); $('#txtTog').textContent = open ? '隱藏文字版' : '顯示文字版'; };
+  if (queue[qi+1]) new Image().src = queue[qi+1].img;   // 預先下載下一組的截圖
   $('#prev').onclick = () => { qi--; renderQ(); area.scrollIntoView(); };
   $('#next').onclick = () => { qi++; renderQ(); area.scrollIntoView(); };
   $('#check').onclick = () => {
@@ -515,10 +529,10 @@ function renderQ(){
 }
 function answerBox(q){
   if (q.qtype === '非選') return `<div class="qblock wide" data-n="${q.n}" data-qt="非選"><b>第 ${q.n} 題（非選）</b>
-    <textarea placeholder="先自己寫寫看，再按「對答案」看參考答案（不會存檔）"></textarea></div>`;
+    <textarea aria-label="第 ${q.n} 題作答區" placeholder="先自己寫寫看，再按「對答案」看參考答案（不會存檔）"></textarea></div>`;
   const keys = Object.keys(q.options || {}).length ? Object.keys(q.options) : ['A','B','C','D'];
-  return `<div class="qblock" data-n="${q.n}" data-qt="${q.qtype||'單選'}"><b>第 ${q.n} 題</b>${q.qtype==='多選' ? '<span class="tag">多選，可選多個</span>' : ''}
-    <div class="opts">${keys.map(k=>`<button class="opt" data-k="${k}">${k}</button>`).join('')}</div></div>`;
+  return `<div class="qblock" data-n="${q.n}" data-qt="${q.qtype||'單選'}" role="group" aria-label="第 ${q.n} 題作答"><b>第 ${q.n} 題</b>${q.qtype==='多選' ? '<span class="tag">多選，可選多個</span>' : ''}
+    <div class="opts">${keys.map(k=>`<button type="button" class="opt" data-k="${k}" aria-pressed="false">${k}</button>`).join('')}</div></div>`;
 }
 function explain(i){
   const kws = (i.keywords||[]).map(k => `<span><b>${esc(k.w)}</b>：${esc(k.m)}</span>`).join('');
@@ -572,7 +586,16 @@ function renderMethod(){
   });
 }
 
-renderOverview(); renderMethod(); renderBank(); renderPracticeHome(); mountArt();
+/* ---------- 鍵盤操作：可點的卡片也能用 Tab 選到、Enter／空白鍵開啟 ---------- */
+const CLICKABLE = '.brand,.kpi[data-go],.level,.gcard,.tcard,.row[data-id]';
+function a11y(){ document.querySelectorAll(CLICKABLE).forEach(el => { if (!el.hasAttribute('tabindex')){ el.tabIndex = 0; el.setAttribute('role', 'button'); } }); }
+new MutationObserver(a11y).observe(document.querySelector('main'), {childList: true, subtree: true});
+document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches(CLICKABLE)){ e.preventDefault(); e.target.click(); } });
+/* 手機上表頭會換行變高，讓置頂目錄、捲動定位跟著表頭實際高度 */
+function setHdr(){ document.documentElement.style.setProperty('--hdr', document.querySelector('header').offsetHeight + 'px'); }
+addEventListener('resize', setHdr);
+
+renderOverview(); renderMethod(); renderBank(); renderPracticeHome(); mountArt(); a11y(); setHdr();
 </script>
 </body>
 </html>
