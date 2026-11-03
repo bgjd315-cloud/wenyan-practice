@@ -1,7 +1,6 @@
 # 原始下載檔與中間產物（體積大，留在本機）
 raw/*
 !raw/data/
-!raw/research.md
 !raw/method.html
 !raw/BRIEF.md
 site/art/_raw/
@@ -11,14 +10,14 @@ __pycache__/
 # 高中版原始檔與中間產物
 hs/raw/*
 !hs/raw/data/
-!hs/raw/research.md
 !hs/raw/method.html
 !hs/raw/BRIEF.md
-!hs/raw/research2.md
-!hs/raw/analysis_by_text.md
 !hs/raw/textcat.json
 !hs/raw/core15.json
 !hs/raw/method_src.html
 hs/site/art/_raw/
 hs/site/art/_jh/
 hs/生圖清單.json
+
+# 教師研究報告只留本機
+hs/site/teacher.html

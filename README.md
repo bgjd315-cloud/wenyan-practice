@@ -12,7 +12,6 @@
 - `site/img/`：每題的原題截圖。
 - `site/art/`：網站插圖。
 - `raw/data/`、`hs/raw/data/`：每份考卷的題目資料（含給老師看的官方說明、疑義釋復、出處備註）。
-- `raw/research.md`、`hs/raw/research.md`：國中、高中文言文解題方法的研究整理與來源。
 - `scripts/build.py`：產生網站資料（`python scripts/build.py` 國中版、`python scripts/build.py hs` 高中版）。
 
 題目來源：國立臺灣師範大學心理與教育測驗研究發展中心、大學入學考試中心公布之歷屆試題，僅供教學練習使用。
