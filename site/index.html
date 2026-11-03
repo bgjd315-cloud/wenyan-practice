@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>文言文練習場</title>
+<title>字裡山河｜國中文言閱讀・基測會考練習</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&display=swap">
 <style>
@@ -52,9 +52,12 @@ main{padding:20px 0 70px}
 .hero{border-radius:var(--radius);aspect-ratio:12/5;min-height:300px;box-shadow:var(--shadow)}
 .hero .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,20,12,.62) 0%,rgba(30,20,12,.28) 45%,rgba(30,20,12,0) 70%);pointer-events:none}
 .art:not(.loaded) .veil{background:linear-gradient(90deg,rgba(162,59,42,.85),rgba(162,59,42,.25) 60%,transparent)}
-.hero .copy{position:absolute;left:6%;top:50%;transform:translateY(-50%);max-width:min(520px,80%);color:var(--hero-ink);z-index:2}
+.hero .copy{position:absolute;left:6%;top:50%;transform:translateY(-50%);max-width:min(560px,80%);color:var(--hero-ink);z-index:2}
 .hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;letter-spacing:.18em;margin:0;line-height:1.2;text-shadow:0 2px 12px rgba(0,0,0,.25)}
-.hero p{margin:10px 0 18px;font-size:clamp(.9rem,1.6vw,1.05rem);opacity:.95}
+.hero .sub{font-size:clamp(.85rem,1.5vw,1rem);letter-spacing:.2em;opacity:.9;margin-top:4px}
+.hero .motto{font-size:clamp(1.05rem,2vw,1.35rem);font-weight:700;letter-spacing:.08em;margin:14px 0 4px}
+.hero .cta{margin-top:16px}
+.hero p{margin:6px 0;font-size:clamp(.9rem,1.6vw,1.05rem);opacity:.95}
 .hero .ph{inset:12px 12px auto auto;width:auto;height:auto;border-style:dashed;background:rgba(255,255,255,.85);padding:4px 10px}
 .cta{display:flex;gap:10px;flex-wrap:wrap}
 .btn{font:inherit;font-size:.95rem;border:1px solid var(--accent);background:var(--accent);color:#fff;padding:7px 18px;border-radius:999px;cursor:pointer}
@@ -179,7 +182,7 @@ footer{color:var(--muted);font-size:.8rem;text-align:center;padding:30px 0 40px}
   .bar{grid-template-columns:80px 1fr 34px}
   nav{margin-left:0;width:100%;justify-content:space-between}
   nav button{padding:5px 9px}
-  .hero{aspect-ratio:auto;height:360px}
+  .hero{aspect-ratio:auto;height:560px}
   .hero .veil{background:linear-gradient(180deg,rgba(30,20,12,.15),rgba(30,20,12,.7))}
   .hero .copy{top:auto;bottom:24px;transform:none;max-width:88%}
   .kpis{margin-top:14px;padding:0;grid-template-columns:repeat(2,1fr);gap:10px}
@@ -194,7 +197,7 @@ footer{color:var(--muted);font-size:.8rem;text-align:center;padding:30px 0 40px}
 <header><div class="wrap top">
   <div class="brand" data-go="overview">
     <div class="art logo" data-art="logo" data-size="512×512"></div>
-    <div><b>文言文練習場</b><small>基測 90 年 ～ 會考 115 年</small></div>
+    <div><b>字裡山河</b><small>國中文言閱讀・基測會考練習</small></div>
   </div>
   <nav id="nav">
     <button data-v="overview" class="on">首頁</button>
@@ -229,15 +232,15 @@ footer{color:var(--muted);font-size:.8rem;text-align:center;padding:30px 0 40px}
 const ITEMS = window.ITEMS || [], EXAMS = window.EXAMS || [];
 const GENRES = ['寓言故事','史傳人物','說理議論','山水遊記','筆記小品','書信序跋','經典語錄','古典詩詞曲','其他'];
 const GENRE_INFO = {
-  '寓言故事':['g-fable','用一個小故事講大道理'],
-  '史傳人物':['g-history','古人做過的事、說過的話'],
-  '說理議論':['g-argument','作者想說服你一個道理'],
-  '山水遊記':['g-travel','古人出門遊玩寫下的見聞'],
-  '筆記小品':['g-notes','有趣的短篇小故事，會考最常考'],
-  '書信序跋':['g-letter','古人寫的信，和寫在書前的話'],
-  '經典語錄':['g-classics','《論語》《孟子》裡的名句'],
-  '古典詩詞曲':['g-poetry','讀懂詩人想說的心情'],
-  '其他':['g-other','對聯、題辭和古人的生活常識']
+  '寓言故事':['g-fable','故事雖短，留下的問題很長。'],
+  '史傳人物':['g-history','走進古人的選擇，看見性情與風骨。'],
+  '說理議論':['g-argument','跟著作者的思路，想一想道理如何成立。'],
+  '山水遊記':['g-travel','隨文字行過山水，讀見沿途的風景與心境。'],
+  '筆記小品':['g-notes','從一則見聞，讀見世間百態。'],
+  '書信序跋':['g-letter','紙上的叮嚀與心意，隔了歲月依然可讀。'],
+  '經典語錄':['g-classics','細讀簡短的話語，想想生活中的道理。'],
+  '古典詩詞曲':['g-poetry','在景物與聲韻之間，聽見詩人的心情。'],
+  '其他':['g-other','從對聯、題辭與生活文字，認識古人的日常。']
 };
 const TYPES = ['字詞解釋','虛詞句式','句意理解','文意推論','主旨寓意','人物情感','寫作手法','比較閱讀','文化常識','典故出處','詩詞賞析'];
 const TYPE_LABEL = {
@@ -295,9 +298,9 @@ function bars(counts, keys, color){
     `<div class="bar"><span>${esc(k)}</span><span class="t"><i style="width:${(counts[k]/max*100).toFixed(1)}%;${color?'background:'+color:''}"></i></span><span class="v">${counts[k]}</span></div>`).join('') + '</div>';
 }
 const LEVELS = [
-  {name:'暖身', star:'★', desc:'基測的單題，一題一句，先熟悉文言文的感覺', preset:{kind:'基測', form:'單題', diff:'易'}},
-  {name:'進階', star:'★★', desc:'讀一整段小故事，回答兩三題', preset:{form:'題組', diff:'中'}},
-  {name:'挑戰', star:'★★★', desc:'會考最難的題目，練熟了就不怕', preset:{kind:'會考', diff:'難'}},
+  {name:'初讀・從一句開始', star:'★', desc:'從簡短單題讀起，認識字詞，找出句子裡的線索。', preset:{kind:'基測', form:'單題', diff:'易'}},
+  {name:'入文・走進故事', star:'★★', desc:'連起前後文，看看人物做了什麼，又為什麼這樣做。', preset:{form:'題組', diff:'中'}},
+  {name:'探意・多想一層', star:'★★★', desc:'練習較有挑戰的會考題，讀出言外之意，讓判斷更有依據。', preset:{kind:'會考', diff:'難'}},
 ];
 function countQ(list){ return list.reduce((s, i) => s + (i.questions||[]).length, 0); }
 function renderOverview(){
@@ -312,9 +315,12 @@ function renderOverview(){
   const base = {kind:'', y0:EXAMS[0]?.year, y1:EXAMS[EXAMS.length-1]?.year, genre:'', type:'', form:'', diff:'', q:''};
   $('#v-overview').innerHTML = `
   ${art('hero', '2400×1000', 'hero', `<div class="veil"></div><div class="copy">
-      <h1>文言文練習場</h1>
-      <p>看不懂文言文？沒關係。這裡有 ${nq} 題歷屆基測、會考的文言文題目，每一題都有白話翻譯和解題小撇步，陪你一題一題練。</p>
-      <div class="cta"><button class="btn light" data-go="practice">開始練習</button><button class="btn line" data-go="method">先學怎麼讀</button></div>
+      <h1>字裡山河</h1>
+      <div class="sub">國中文言閱讀・基測會考練習</div>
+      <div class="motto">從一句讀起，與古人的故事相逢。</div>
+      <p>古人也會猶豫、歡喜，也曾為一件小事想上很久。那些心情與智慧，就藏在短短的字句裡，等你慢慢讀懂。</p>
+      <p>這裡整理歷屆基測、會考文言試題，搭配白話翻譯、題目解析與閱讀方法，陪你從字詞找到線索，讀懂故事，也讀出自己的想法。</p>
+      <div class="cta"><button class="btn light" data-go="practice">開始練習</button><button class="btn line" data-go="method">學習讀文方法</button></div>
     </div>`)}
   <div class="grid kpis">
     <div class="card kpi"><div class="n">${mine}</div><div class="l">我已經做了幾題</div></div>
@@ -322,17 +328,17 @@ function renderOverview(){
     <div class="card kpi" style="cursor:pointer" data-go="wrong"><div class="n">${nWrong}</div><div class="l">錯題本裡的題目 →</div></div>
     <div class="card kpi"><div class="n">${nq}</div><div class="l">題目可以練</div></div>
   </div>
-  <h2>從這裡開始</h2>
+  <h2>從一篇讀懂開始</h2>
   <div class="grid levels">${LEVELS.map((l, k) => {
     const n = countQ(applyFilters({...base, ...l.preset}));
     return `<div class="card level" data-level="${k}"><div class="lv">${l.star}</div><div><b>${l.name}</b>　<span class="meta">${n} 題</span><div class="meta">${l.desc}</div></div></div>`;
   }).join('')}</div>
-  <h2>選一種文章來練</h2>
+  <h2>在不同篇章裡相逢</h2>
   <div class="grid genres">${GENRES.filter(x => gq[x]).map(x => `
     <div class="card gcard" data-genre="${x}">${art(GENRE_INFO[x][0], '1200×900')}
       <div class="body"><div class="name">${x}<span>${gq[x]} 題</span></div><div class="desc">${GENRE_INFO[x][1]}</div></div>
     </div>`).join('')}</div>
-  <h2>選一種題型來練</h2>
+  <h2>循著問題，細讀字句</h2>
   <div class="chips">${TYPES.filter(x => tq[x]).map(x => `<button class="chip" data-type="${x}">${tl(x)}<span>${tq[x]}</span></button>`).join('')}</div>`;
   document.querySelectorAll('.gcard').forEach(c => c.onclick = () => openBank({genre: c.dataset.genre}));
   document.querySelectorAll('.chip').forEach(c => c.onclick = () => openBank({type: c.dataset.type}));
@@ -401,7 +407,7 @@ function openBank(preset){
 /* ---------- practice ---------- */
 let queue = [], qi = 0;
 function renderPracticeHome(){
-  $('#practiceBox').innerHTML = `<p class="meta" style="margin-top:0">選好想練的範圍，按「開始練習」。不知道從哪裡開始？回首頁點「暖身」就對了。</p>` + filterUI('fp', `<label class="meta">題數 <input type="number" data-f="n" value="10" min="1" max="200" style="width:64px"></label>
+  $('#practiceBox').innerHTML = `<p class="meta" style="margin-top:0">選好想練的範圍，按「開始練習」。不知道從哪裡開始？回首頁點「初讀」就對了。</p>` + filterUI('fp', `<label class="meta">題數 <input type="number" data-f="n" value="10" min="1" max="200" style="width:64px"></label>
     <select data-f="order"><option value="rand">隨機</option><option value="seq">依年代</option><option value="new">只做沒做過的</option></select>
     <button class="btn" id="go">開始練習</button>`) + '<div id="pArea"></div>';
   $('#go').onclick = () => {

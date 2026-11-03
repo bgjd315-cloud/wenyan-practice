@@ -8,7 +8,7 @@ data = {k: open(p, encoding='utf-8').read() for k, _, p in docs}
 tabs = ''.join(f'<button data-doc="{k}"{" class=on" if i == 0 else ""}>{t}</button>' for i, (k, t, _) in enumerate(docs))
 html = '''<!doctype html>
 <html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>高中文言文教師研究</title>
+<title>字裡山河・教師研究</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;900&display=swap">
 <style>
 :root{--bg:#f5f0e6;--paper:#fffcf5;--ink:#2b2622;--muted:#7a6f64;--line:#e3d9c8;--accent:#a23b2a;--soft:#f3e2da}
@@ -30,7 +30,7 @@ article blockquote{margin:1em 0;padding:8px 14px;border-left:4px solid var(--lin
 article a{color:var(--accent)}article code{background:var(--bg);padding:0 4px;border-radius:4px}
 @media (max-width:640px){article{padding:16px}}
 </style></head><body>
-<header><div class="wrap top"><b>高中文言文・教師研究</b>''' + tabs + '''<a href="index.html">← 回練習場</a></div></header>
+<header><div class="wrap top"><b>字裡山河・教師研究</b>''' + tabs + '''<a href="index.html">← 回字裡山河</a></div></header>
 <main class="wrap"><article id="doc"></article></main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script>
