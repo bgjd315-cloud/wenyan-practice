@@ -6,6 +6,8 @@ import sys, os, numpy as np
 from PIL import Image
 BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'raw')
 key, spec, out = sys.argv[1], sys.argv[2], sys.argv[3]
+if key[:2] in ('xc', 'zk'):   # 高中：學測 xc、指考 zk
+    BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'hs', 'raw')
 parts = []
 for seg in spec.split(';'):
     f = seg.strip().split(':')

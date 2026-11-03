@@ -8,3 +8,12 @@ site/art/_raw/
 .claude/
 生圖清單.json
 __pycache__/
+# 高中版原始檔與中間產物
+hs/raw/*
+!hs/raw/data/
+!hs/raw/research.md
+!hs/raw/method.html
+!hs/raw/BRIEF.md
+hs/site/art/_raw/
+hs/site/art/_jh/
+hs/生圖清單.json

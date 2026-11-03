@@ -1,9 +1,14 @@
-"""Merge raw/data/*.json into site/data.js (window.EXAMS / window.ITEMS / window.METHOD)."""
+"""Merge raw/data/*.json into site/data.js (window.EXAMS / window.ITEMS / window.METHOD).
+python build.py        國中版（raw → site）
+python build.py hs     高中版（hs/raw → hs/site）"""
 import json, glob, os, re, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-os.chdir(ROOT)
+HS = len(sys.argv) > 1 and sys.argv[1] == 'hs'
+os.chdir(os.path.join(ROOT, 'hs') if HS else ROOT)
 
 def label(key):
+    if HS:
+        return f'{key[2:]}{"學測" if key.startswith("xc") else "指考"}'
     m = re.match(r'bc(\d+)-(\w+)', key)
     if m:
         y, s = m.groups()
@@ -12,10 +17,19 @@ def label(key):
         return f'{y}年第{"一" if s == "1" else "二"}次基測'
     return f'{key[2:]}年{"試辦" if key == "hk102" else ""}會考'
 
+def kind(key):
+    return {'xc': '學測', 'zk': '指考', 'bc': '基測', 'hk': '會考'}[key[:2]]
+
 def order(key):
-    m = re.match(r'(bc|hk)(\d+)(?:-(\w+))?', key)
+    m = re.match(r'(bc|hk|xc|zk)(\d+)(?:-(\w+))?', key)
     t, y, s = m.groups()
-    return (int(y), 0 if t == 'bc' else 1, {'1': 0, '2': 1, 'nbk': 2}.get(s or '', 0))
+    return (int(y), 0 if t in ('bc', 'xc') else 1, {'1': 0, '2': 1, 'nbk': 2}.get(s or '', 0))
+
+def answer_ok(q):
+    if HS and q.get('qtype') == '非選':
+        return True
+    a = q.get('answer') or ''
+    return bool(a) and all(c in q.get('options', {}) for c in a) and (len(a) == 1 or q.get('qtype') == '多選')
 
 exams, items, problems = [], [], []
 for f in sorted(glob.glob('raw/data/*.json'), key=lambda f: order(os.path.basename(f)[:-5])):
@@ -25,16 +39,15 @@ for f in sorted(glob.glob('raw/data/*.json'), key=lambda f: order(os.path.basena
     except Exception as e:
         problems.append(f'{key}: JSON error {e}'); continue
     y = int(re.search(r'\d+', key).group())
-    exams.append({'key': key, 'label': label(key), 'year': y, 'kind': '基測' if key.startswith('bc') else '會考',
+    exams.append({'key': key, 'label': label(key), 'year': y, 'kind': kind(key),
                   'total': d.get('total_questions'), 'count': len(d.get('items', []))})
     for it in d.get('items', []):
-        it['exam'] = key; it['label'] = label(key); it['year'] = y
-        it['kind'] = '基測' if key.startswith('bc') else '會考'
+        it['exam'] = key; it['label'] = label(key); it['year'] = y; it['kind'] = kind(key)
         img = it.get('img') or f"img/{it['id']}.png"
         it['img'] = img
         if not os.path.exists(os.path.join('site', img)): problems.append(f"{it['id']}: missing {img}")
         for q in it.get('questions', []):
-            if q.get('answer') not in ('A', 'B', 'C', 'D'): problems.append(f"{it['id']} q{q.get('n')}: answer={q.get('answer')}")
+            if not answer_ok(q): problems.append(f"{it['id']} q{q.get('n')}: answer={q.get('answer')}")
         for k in ('official', 'note', 'crop'):   # teacher-only notes stay in raw/data
             it.pop(k, None)
         items.append(it)
