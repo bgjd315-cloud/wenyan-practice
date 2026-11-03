@@ -32,6 +32,8 @@ def answer_ok(q):
     return bool(a) and all(c in q.get('options', {}) for c in a) and (len(a) == 1 or q.get('qtype') == '多選')
 
 exams, items, problems = [], [], []
+# 高中版：文本類別（部定古文／延伸／學術／科普／生活情境／文學），由 hs/raw/textcat.json 提供
+TEXTCAT = json.load(open('raw/textcat.json', encoding='utf-8')) if os.path.exists('raw/textcat.json') else {}
 for f in sorted(glob.glob('raw/data/*.json'), key=lambda f: order(os.path.basename(f)[:-5])):
     key = os.path.basename(f)[:-5]
     try:
@@ -48,6 +50,12 @@ for f in sorted(glob.glob('raw/data/*.json'), key=lambda f: order(os.path.basena
         if not os.path.exists(os.path.join('site', img)): problems.append(f"{it['id']}: missing {img}")
         for q in it.get('questions', []):
             if not answer_ok(q): problems.append(f"{it['id']} q{q.get('n')}: answer={q.get('answer')}")
+        tc = TEXTCAT.get(it['id'])
+        if tc:
+            it['textcat'] = tc.get('textcat', ''); it['textcat2'] = tc.get('textcat2', '')
+            it['linked_core'] = tc.get('linked_core', '')
+        elif TEXTCAT:
+            problems.append(f"{it['id']}: no textcat")
         for k in ('official', 'note', 'crop'):   # teacher-only notes stay in raw/data
             it.pop(k, None)
         items.append(it)

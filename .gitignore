@@ -14,6 +14,11 @@ hs/raw/*
 !hs/raw/research.md
 !hs/raw/method.html
 !hs/raw/BRIEF.md
+!hs/raw/research2.md
+!hs/raw/analysis_by_text.md
+!hs/raw/textcat.json
+!hs/raw/core15.json
+!hs/raw/method_src.html
 hs/site/art/_raw/
 hs/site/art/_jh/
 hs/生圖清單.json

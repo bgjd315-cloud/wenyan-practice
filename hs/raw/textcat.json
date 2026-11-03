@@ -1,0 +1,2361 @@
+{
+ "xc101-8": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "朱熹〈大學章句序〉為經學注疏序文，論教化之理"
+ },
+ "xc101-9": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "四首詞句依時序排列，純詩詞賞析"
+ },
+ "xc101-10": {
+  "textcat": "部定古文",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "岳陽樓記",
+  "why": "小說情境填空，選項半數為〈岳陽樓記〉原句"
+ },
+ "xc101-11": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "赤壁賦",
+  "why": "蘇軾筆記小品，與核心古文〈赤壁賦〉同作者"
+ },
+ "xc101-14": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "方孝孺寓言〈越車〉"
+ },
+ "xc101-20": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "馮諼客孟嘗君、出師表、師說、項脊軒志、廉恥、左忠毅公軼事",
+  "why": "字義比較，前句多出自〈出師表〉〈項脊軒志〉等課文"
+ },
+ "xc101-21": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詩詞寫景手法辨識"
+ },
+ "xc101-22": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詩中月亮意象與思婦情"
+ },
+ "xc101-23": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "蘇轍〈東軒記〉記體散文的自我反省"
+ },
+ "xc101-ns2": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "桃花源記",
+  "why": "非選直接分析〈桃花源記〉全文"
+ },
+ "xc102-4": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師",
+  "why": "賓語前置語法題，選項以《論》《孟》為主並含〈燭之武退秦師〉"
+ },
+ "xc102-5": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "蕭繹評〈擣衣〉詩的詩論文字"
+ },
+ "xc102-6": {
+  "textcat": "生活情境文本",
+  "textcat2": "延伸",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "赤壁賦",
+  "why": "蘇軾故居對聯，提及赤壁兩賦"
+ },
+ "xc102-11": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《鶴林玉露》寓理故事"
+ },
+ "xc102-14": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "俞樾筆記記鼠，敘事小品"
+ },
+ "xc102-18": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "出師表",
+  "why": "古代文化知識（時辰、崩殂、進學），含〈出師表〉句"
+ },
+ "xc102-21": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇",
+  "linked_core": "馮諼客孟嘗君、始得西山宴遊記、左忠毅公軼事",
+  "why": "字義比較，選項多出自始得西山、左忠毅公軼事等課文"
+ },
+ "xc102-22": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "經典語錄（論語、孟子）義理判讀"
+ },
+ "xc102-23": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《艾子外語》寓言"
+ },
+ "xc102-ns2": {
+  "textcat": "學術文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "蘇轍〈上樞密韓太尉書〉以書信論「文氣」養成，屬文論"
+ },
+ "xc103-3": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "桃花喻美人的詩歌意象"
+ },
+ "xc103-4": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "余光中論詩，選項為古典詩句"
+ },
+ "xc103-6": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《河南程氏遺書》論四凶的史論"
+ },
+ "xc103-7": {
+  "textcat": "生活情境文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "吟詠鄭成功對聯補缺"
+ },
+ "xc103-12": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "勞山道士",
+  "why": "《聊齋誌異‧鴝鵒》，與〈勞山道士〉同書"
+ },
+ "xc103-14": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "馮諼客孟嘗君",
+  "why": "《戰國策‧東周策》，與〈馮諼客孟嘗君〉同書"
+ },
+ "xc103-20": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "",
+  "why": "〈進資治通鑑表〉等論史書編纂，屬史學論述"
+ },
+ "xc103-21": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "大同與小康",
+  "why": "《禮記‧檀弓》曾子易簀，與〈大同與小康〉同書"
+ },
+ "xc103-22": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "典論論文、師說、醉翁亭記、赤壁賦",
+  "why": "以〈赤壁賦〉句式為例，選項為師說、典論論文、醉翁亭記"
+ },
+ "xc103-23": {
+  "textcat": "文學文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "虬髯客傳",
+  "why": "古典小說人物情節，含〈虬髯客傳〉一項"
+ },
+ "xc103-ns1": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "錢穆文言論述「清賞」與觀光，文化評論"
+ },
+ "xc103-ns2": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "出師表",
+  "why": "非選以語用「謙遜原則」分析〈出師表〉"
+ },
+ "xc104-6": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "現代詩與古典詩句情感對應"
+ },
+ "xc104-9": {
+  "textcat": "生活情境文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "賀詩選配題辭，應酬應用"
+ },
+ "xc104-10": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "經典語錄比附「自強不息」義理"
+ },
+ "xc104-11": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師、馮諼客孟嘗君、出師表、諫太宗十思疏",
+  "why": "人物言行分析，選項全出自課文（馮諼、出師表、燭之武、十思疏）"
+ },
+ "xc104-14": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "紀昀筆記記京師詐偽，敘事小品"
+ },
+ "xc104-17": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "桃花源記、赤壁賦、項脊軒志、廉恥、左忠毅公軼事",
+  "why": "前句皆課文（桃花源記、廉恥、項脊軒志等）的字義比較"
+ },
+ "xc104-18": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "師說、岳陽樓記、醉翁亭記、勞山道士、裨海紀遊",
+  "why": "以課文例句判斷「描述→解說」寫法"
+ },
+ "xc104-19": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "孟子、大學、中庸論施政"
+ },
+ "xc104-20": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "李白、杜甫寫魚膾詩比較"
+ },
+ "xc104-21": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "莊子、說苑寓言對讀"
+ },
+ "xc104-23": {
+  "textcat": "文學文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "虬髯客傳",
+  "why": "文學作品女性形象，含〈虬髯客傳〉紅拂"
+ },
+ "xc104-ns2": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "典論論文",
+  "why": "非選比較〈典論論文〉與高行健文論"
+ },
+ "xc105-4": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "師說、晚遊六橋待月記",
+  "why": "古今詞義，含〈師說〉〈晚遊六橋待月記〉例句"
+ },
+ "xc105-5": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "出師表、桃花源記、始得西山宴遊記、醉翁亭記、郁離子選、勞山道士、左忠毅公軼事",
+  "why": "字義比較，全為課文句"
+ },
+ "xc105-6": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "電影台詞與古典詩詞意旨對應"
+ },
+ "xc105-13": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "101課綱30篇",
+  "linked_core": "",
+  "why": "《啟顏錄》笑話，語言機智"
+ },
+ "xc105-15": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "鴻門宴",
+  "why": "《史記‧管晏列傳》，與〈鴻門宴〉同書同作者"
+ },
+ "xc105-17": {
+  "textcat": "部定古文",
+  "textcat2": "生活情境文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "大同與小康、諫逐客書、諫太宗十思疏、岳陽樓記、廉恥",
+  "why": "戒菸廣告類比，選項為岳陽樓記、諫逐客書、十思疏"
+ },
+ "xc105-18": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "移情於景的詩詞手法"
+ },
+ "xc105-19": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "儒家主體性義理比附"
+ },
+ "xc105-21": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《夢溪筆談》論書畫鑑賞（耳鑒、神會），屬藝術評論"
+ },
+ "xc105-22": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "典論論文、師說、赤壁賦、項脊軒志、臺灣通史序",
+  "why": "典故用意，選項全為課文"
+ },
+ "xc105-23": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "李白與洛夫聽琴詩比較"
+ },
+ "xc106-5": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "大同與小康",
+  "why": "儒墨思想文句分辨，含〈大同與小康〉"
+ },
+ "xc106-6": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "元曲比喻嘲諷"
+ },
+ "xc106-8": {
+  "textcat": "部定古文",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "醉翁亭記、赤壁賦、裨海紀遊",
+  "why": "白話文章配文言選項，多為赤壁賦、裨海紀遊等課文"
+ },
+ "xc106-10": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "蘇雪林散文引程垓詞"
+ },
+ "xc106-14": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《孔叢子》子思論事君，儒家義理對話"
+ },
+ "xc106-16": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "馮諼客孟嘗君、典論論文、出師表、始得西山宴遊記、岳陽樓記、勞山道士、左忠毅公軼事、臺灣通史序",
+  "why": "字義比較，多為課文句"
+ },
+ "xc106-17": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師、師說、廉恥",
+  "why": "假設語意關係，選項多為課文"
+ },
+ "xc106-19": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "題畫詩"
+ },
+ "xc106-20": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "葉燮《原詩》、顧炎武《日知錄》論詩人品格"
+ },
+ "xc106-ns2": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "虬髯客傳",
+  "why": "非選分析〈虬髯客傳〉紅拂夜奔"
+ },
+ "xc107-4": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "王國維札記引葉夢得論人才"
+ },
+ "xc107-10": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "宋濂《燕書》寓言"
+ },
+ "xc107-11": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇",
+  "linked_core": "原君",
+  "why": "學派歸屬（原君、商君書、墨子）思想史判斷"
+ },
+ "xc107-12": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "師說",
+  "why": "直接考〈師說〉原文"
+ },
+ "xc107-17": {
+  "textcat": "生活情境文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詠史詩牌卡遊戲規則情境"
+ },
+ "xc107-19": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "賀鑄〈天香〉詞"
+ },
+ "xc107-21": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "桃花源記",
+  "why": "孫康宜論陶潛經典化，詩評接受史；陶淵明為核心作者"
+ },
+ "xc107-27": {
+  "textcat": "科普文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《坤輿圖說》鱷魚描寫對照現代動物學"
+ },
+ "xc107-31": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《莊子》惠莊有情無情之辯，思想論辯"
+ },
+ "xc107-33": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "元結〈菊圃記〉托物寓理"
+ },
+ "xc107-35": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "出師表",
+  "why": "謙詞判斷（文化常識），含〈出師表〉"
+ },
+ "xc107-36": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "諫逐客書、典論論文、蘭亭集序、諫太宗十思疏、郁離子選、勞山道士、左忠毅公軼事",
+  "why": "字義比較，全為課文句"
+ },
+ "xc107-39": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "杜審言、王勃宦遊詩"
+ },
+ "xc107-40": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詠物詩對象辨識"
+ },
+ "xc108-3": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "鴻門宴",
+  "why": "〈項羽本紀〉太史公論贊，與〈鴻門宴〉同篇"
+ },
+ "xc108-5": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "宣鼎〈雅賺〉鄭板橋軼事"
+ },
+ "xc108-6": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "世說新語選",
+  "why": "《世說新語‧捷悟》，與核心選文同書"
+ },
+ "xc108-7": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "赤壁賦",
+  "why": "蘇軾〈淨因院畫記〉畫論，與〈赤壁賦〉同作者"
+ },
+ "xc108-13": {
+  "textcat": "部定古文",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "項脊軒志",
+  "why": "張曉風散文與〈項脊軒志〉故居對讀"
+ },
+ "xc108-15": {
+  "textcat": "學術文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "潘耒序論「遊」之道，題目延伸旅行文案"
+ },
+ "xc108-31": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "方孝孺寓言〈越巫〉"
+ },
+ "xc108-33": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《鶴林玉露》論士人言行不一，論學"
+ },
+ "xc108-35": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "漁父、鴻門宴、諫太宗十思疏、岳陽樓記、赤壁賦、郁離子選、原君、勞山道士",
+  "why": "字義比較，前句多課文"
+ },
+ "xc108-37": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "諫逐客書、馮諼客孟嘗君、與陳伯之書、廉恥、勸和論、臺灣通史序",
+  "why": "讓步語意，選項為勸和論、諫逐客書、廉恥、臺灣通史序、與陳伯之書"
+ },
+ "xc108-38": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《老學庵筆記》避諱、「漢子」語源考證"
+ },
+ "xc108-39": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "劉禹錫、謝鯉魚懷古詩"
+ },
+ "xc108-40": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "論詞發展的詞學文字"
+ },
+ "xc108-41": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "師說",
+  "why": "由〈師說〉「孔子師老聃」帶出老孔論禮"
+ },
+ "xc109-4": {
+  "textcat": "生活情境文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "對聯虛字填空"
+ },
+ "xc109-9": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "稱謂（西席）文化常識，材料為紅樓夢、元雜劇"
+ },
+ "xc109-10": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "勸學",
+  "why": "《荀子‧禮論》，與〈勸學〉同作者"
+ },
+ "xc109-11": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "八股經義闡釋《論語》，科舉文化"
+ },
+ "xc109-12": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "勞山道士",
+  "why": "《聊齋‧黃英》，與〈勞山道士〉同書"
+ },
+ "xc109-13": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "赤壁賦",
+  "why": "蘇軾〈石蒼舒醉墨堂〉，與〈赤壁賦〉同作者"
+ },
+ "xc109-16": {
+  "textcat": "科普文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "陸游煮粥筆記配低GI營養資料"
+ },
+ "xc109-22": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "朱光潛論文學趣味，配經典語錄"
+ },
+ "xc109-24": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《莊子‧山木》寓言"
+ },
+ "xc109-26": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "蔡瑜論抒情詩，配王安石、張養浩詞曲"
+ },
+ "xc109-29": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "虬髯客傳、諫太宗十思疏、項脊軒志、原君",
+  "why": "甲骨文字形本義（文字學），選項為項脊軒志、原君、虬髯客傳等課文"
+ },
+ "xc109-33": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "王德威引經籍論「鬼／歸」"
+ },
+ "xc109-35": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "大同與小康、鴻門宴、出師表、桃花源記、蘭亭集序、原君",
+  "why": "字義比較，含出師表、蘭亭集序、禮運、原君"
+ },
+ "xc109-37": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "赤壁賦",
+  "why": "蔣渭水〈入獄賦〉仿擬〈赤壁賦〉"
+ },
+ "xc109-38": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "以白居易軼事佐證文學與商業之論點"
+ },
+ "xc109-39": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師、漁父、醉翁亭記",
+  "why": "反問句，選項為醉翁亭記、漁父、燭之武退秦師等"
+ },
+ "xc109-40": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詩中「舟」的隱逸意象"
+ },
+ "xc109-41": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "韓非思想判讀"
+ },
+ "xc109-42": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇",
+  "linked_core": "典論論文",
+  "why": "古典散文文學常識，選項涉〈典論論文〉等課文"
+ },
+ "xc110-8": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《顏氏家訓》《文章辨體序說》論文體"
+ },
+ "xc110-9": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇",
+  "linked_core": "始得西山宴遊記、醉翁亭記、臺灣通史序",
+  "why": "判斷句，選項為醉翁亭記、始得西山、臺灣通史序"
+ },
+ "xc110-10": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "〈烏鵲歌〉古歌謠"
+ },
+ "xc110-11": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "章學誠《文史通義》說理"
+ },
+ "xc110-12": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《滹南詩話》評郊寒白俗"
+ },
+ "xc110-13": {
+  "textcat": "生活情境文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "賀婚詩判斷場合"
+ },
+ "xc110-14": {
+  "textcat": "生活情境文本",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "",
+  "why": "故事角色設定表推斷經典人物關係"
+ },
+ "xc110-15": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詞選統計表（文獻學）判讀，配李清照詞"
+ },
+ "xc110-18": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《孟子》與王夫之注解對讀，注疏"
+ },
+ "xc110-20": {
+  "textcat": "部定古文",
+  "textcat2": "生活情境文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "諫逐客書、虬髯客傳",
+  "why": "職場文章概念套用於諫逐客書、虬髯客傳"
+ },
+ "xc110-24": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《商君書》《夢溪筆談》經濟觀點比較"
+ },
+ "xc110-26": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "朱光潛、王夫之論推敲，詩論"
+ },
+ "xc110-31": {
+  "textcat": "學術文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "曾鞏書信論「道」與「辭」"
+ },
+ "xc110-33": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "馮諼客孟嘗君",
+  "why": "《戰國策‧魏策》南轅北轍，與〈馮諼〉同書"
+ },
+ "xc110-35": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "勸學、馮諼客孟嘗君、始得西山宴遊記、赤壁賦、左忠毅公軼事",
+  "why": "疊字詞義，含赤壁賦、勸學、馮諼、始得西山"
+ },
+ "xc110-36": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "典論論文、出師表、蘭亭集序、師說、諫太宗十思疏、岳陽樓記",
+  "why": "正對反對，選項多課文"
+ },
+ "xc110-37": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師、鴻門宴、師說、赤壁賦",
+  "why": "「形容詞＋於」比較句，選項多課文"
+ },
+ "xc110-40": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《列子》寓言"
+ },
+ "xc111-6": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "杜詩依格律填詞"
+ },
+ "xc111-7": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《莊子》不龜手之藥寓言"
+ },
+ "xc111-8": {
+  "textcat": "文學文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《三國志》曹操紓困令，史傳文書"
+ },
+ "xc111-12": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "張岱〈陶庵夢憶序〉"
+ },
+ "xc111-14": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "108-15篇",
+  "linked_core": "畫菊自序",
+  "why": "〈畫菊自序〉與呂碧城論女性創作對讀"
+ },
+ "xc111-18": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "郁離子選",
+  "why": "《郁離子‧獻馬》，與〈工之僑獻琴〉同書"
+ },
+ "xc111-20": {
+  "textcat": "生活情境文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "古蹟介紹、遺訓與法規條文的整合判讀"
+ },
+ "xc111-23": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "論孟原文與朱熹解說，注疏"
+ },
+ "xc111-26": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "大同與小康、諫逐客書、馮諼客孟嘗君、鴻門宴、師說、項脊軒志、勞山道士",
+  "why": "字義比較，含禮運、馮諼、師說、勞山道士"
+ },
+ "xc111-29": {
+  "textcat": "生活情境文本",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "",
+  "why": "古裝劇編劇任務，考文化常識"
+ },
+ "xc111-30": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "龔鼎孳〈吃野菜說〉小品"
+ },
+ "xc111-31": {
+  "textcat": "生活情境文本",
+  "textcat2": "學術文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "",
+  "why": "鄭燮家書論讀書，兼考書信啟封詞"
+ },
+ "xc111-33": {
+  "textcat": "部定古文",
+  "textcat2": "文學文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "勞山道士",
+  "why": "〈勞山道士〉與《閱微草堂筆記》對讀"
+ },
+ "xc112-05": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "燭之武退秦師、鴻門宴",
+  "why": "〈燭之武退秦師〉〈鴻門宴〉說辭的角色分析"
+ },
+ "xc112-06": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "唐傳奇〈補江總白猿傳〉"
+ },
+ "xc112-07": {
+  "textcat": "生活情境文本",
+  "textcat2": "學術文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《隨園食單》待客菜餚，題目轉作文之喻"
+ },
+ "xc112-10": {
+  "textcat": "科普文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "天文星象（木星合土星）與占驗史事"
+ },
+ "xc112-15": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "108-15篇",
+  "linked_core": "鹿港乘桴記",
+  "why": "洪繻〈籌海議〉政論，與〈鹿港乘桴記〉同作者，題目轉遊戲腳本"
+ },
+ "xc112-18": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "陸游題跋記李光風骨"
+ },
+ "xc112-21": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "葉嘉瑩論《論語》前言"
+ },
+ "xc112-23": {
+  "textcat": "科普文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "檳榔功效與危害（本草、健康）"
+ },
+ "xc112-26": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "鴻門宴、師說、項脊軒志、晚遊六橋待月記、勞山道士",
+  "why": "字義比較，含師說、勞山道士、項羽本紀、六橋"
+ },
+ "xc112-27": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "鴻門宴、出師表、桃花源記、虬髯客傳、岳陽樓記",
+  "why": "程度副詞，選項全為課文"
+ },
+ "xc112-29": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《論衡》載夫餘王傳說，神話敘事"
+ },
+ "xc112-31": {
+  "textcat": "文學文本",
+  "textcat2": "延伸",
+  "core_list": "101課綱30篇",
+  "linked_core": "漁父",
+  "why": "元曲與現代文章論屈原形象"
+ },
+ "xc112-35": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "赤壁賦",
+  "why": "許潮《赤壁遊》雜劇承繼〈赤壁賦〉"
+ },
+ "xc113-04": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《抱朴子》論偏才"
+ },
+ "xc113-05": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《鹽鐵論》論養士"
+ },
+ "xc113-13": {
+  "textcat": "學術文本",
+  "textcat2": "延伸",
+  "core_list": "101課綱30篇",
+  "linked_core": "世說新語選",
+  "why": "周處傳說的文獻考辨，引《世說新語》"
+ },
+ "xc113-18": {
+  "textcat": "部定古文",
+  "textcat2": "科普文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "大同與小康、出師表、虬髯客傳、赤壁賦、勞山道士",
+  "why": "心理學文章配課文情緒描寫（勞山道士、赤壁賦、虬髯客、出師表）"
+ },
+ "xc113-21": {
+  "textcat": "生活情境文本",
+  "textcat2": "學術文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "古代判決書對照當代判決書格式"
+ },
+ "xc113-23": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "唐代科舉研究引《獨異志》崔群故事"
+ },
+ "xc113-26": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "出師表、師說、赤壁賦、項脊軒志",
+  "why": "目的連詞「以」，選項全為課文"
+ },
+ "xc113-27": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "燭之武退秦師、鴻門宴、桃花源記、項脊軒志、勞山道士",
+  "why": "字義比較，全為課文"
+ },
+ "xc113-29": {
+  "textcat": "科普文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《天工開物》《本草綱目》硃砂煉製"
+ },
+ "xc113-30": {
+  "textcat": "文學文本",
+  "textcat2": "學術文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "方志、紀事中的鄭成功傳說"
+ },
+ "xc113-34": {
+  "textcat": "文學文本",
+  "textcat2": "科普文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "李煜、辛棄疾詞配記憶與氣味研究"
+ },
+ "xc114-05": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "王安石〈材論〉"
+ },
+ "xc114-11": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "魏禧日錄論君子小人"
+ },
+ "xc114-13": {
+  "textcat": "學術文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "〈論六家要旨〉配MBTI人格情境"
+ },
+ "xc114-15": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "赤壁賦",
+  "why": "田曉菲論杜牧〈赤壁〉與〈赤壁賦〉"
+ },
+ "xc114-20": {
+  "textcat": "生活情境文本",
+  "textcat2": "科普文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "李漁居室壁面設計"
+ },
+ "xc114-22": {
+  "textcat": "科普文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "錢乙醫案（中醫藥）"
+ },
+ "xc114-25": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "大同與小康、諫逐客書、漁父、出師表、虬髯客傳、項脊軒志、勞山道士",
+  "why": "字義比較，全為課文"
+ },
+ "xc114-29": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "諫逐客書、出師表、項脊軒志、勞山道士",
+  "why": "假設連詞「則」，選項多課文"
+ },
+ "xc114-30": {
+  "textcat": "部定古文",
+  "textcat2": "生活情境文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "晚遊六橋待月記",
+  "why": "〈晚遊六橋待月記〉與王思任遊記，延伸自助行程文案"
+ },
+ "xc114-32": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "燭之武退秦師、虬髯客傳、畫菊自序",
+  "why": "〈虬髯客傳〉配「概念框架」討論"
+ },
+ "xc115-03": {
+  "textcat": "延伸",
+  "textcat2": "生活情境文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "勸和論",
+  "why": "鄭用錫賀詩（應酬題贈），與〈勸和論〉同作者"
+ },
+ "xc115-04": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "燭之武退秦師、諫逐客書、鴻門宴",
+  "why": "以韓非〈亡徵〉解讀鴻門宴、燭之武、諫逐客書"
+ },
+ "xc115-05": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "赤壁賦",
+  "why": "蘇軾〈書論〉政論，與〈赤壁賦〉同作者"
+ },
+ "xc115-11": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "余英時論俠與士，配孟荀"
+ },
+ "xc115-14": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "虬髯客傳",
+  "why": "量詞分類表（語言學），例句取自虬髯客傳等"
+ },
+ "xc115-16": {
+  "textcat": "科普文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "皂莢、肥皂的本草與物產考"
+ },
+ "xc115-19": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "書法史論懷素〈自敘帖〉"
+ },
+ "xc115-22": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "杜詩與仇兆鰲、浦起龍注解對讀"
+ },
+ "xc115-25": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "燭之武退秦師、大同與小康、諫逐客書、鴻門宴、桃花源記、虬髯客傳、赤壁賦、晚遊六橋待月記、畫菊自序",
+  "why": "字義比較，含禮運、六橋、項羽本紀、燭之武"
+ },
+ "xc115-27": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "晚遊六橋待月記",
+  "why": "袁宏道遊記，與〈晚遊六橋待月記〉同作者"
+ },
+ "xc115-29": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《韓詩外傳》孔子學琴，論學習層次"
+ },
+ "xc115-30": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "出師表",
+  "why": "〈出師表〉與曹操〈陳損益表〉文體對讀"
+ },
+ "xc115-32": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "108-15篇；101課綱30篇",
+  "linked_core": "項脊軒志",
+  "why": "〈項脊軒志〉與歸有光其他文章論家族女性"
+ },
+ "zk101-4": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "勸學",
+  "why": "《荀子‧解蔽》，與〈勸學〉同作者"
+ },
+ "zk101-5": {
+  "textcat": "生活情境文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "楹聯填字"
+ },
+ "zk101-7": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "桃花源記、始得西山宴遊記、岳陽樓記、醉翁亭記",
+  "why": "「記」體知識，以四篇核心記體文為例"
+ },
+ "zk101-9": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "漁父、出師表、蘭亭集序",
+  "why": "出處進退觀，選項多為課文"
+ },
+ "zk101-10": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《讀畫錄》陳老蓮學畫，論學藝"
+ },
+ "zk101-11": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "宋濂〈猿說〉寓言"
+ },
+ "zk101-12": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "范仲淹、晏幾道詞比較"
+ },
+ "zk101-13": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "張養浩散曲"
+ },
+ "zk101-16": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "師說",
+  "why": "韓愈〈藍田縣丞廳壁記〉，與〈師說〉同作者"
+ },
+ "zk101-19": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "鴻門宴、出師表、醉翁亭記",
+  "why": "字義比較，多課文"
+ },
+ "zk101-20": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師、鴻門宴、蘭亭集序、虬髯客傳、左忠毅公軼事",
+  "why": "詞性比較，多課文"
+ },
+ "zk101-21": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "江水寄寓物是人非"
+ },
+ "zk101-n1": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師",
+  "why": "非選以《文心雕龍》說辭理論分析〈燭之武退秦師〉"
+ },
+ "zk102-4": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "唐詩對仗句"
+ },
+ "zk102-5": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師、蘭亭集序、岳陽樓記、勞山道士",
+  "why": "詞義與文化傳統，例句為燭之武、岳陽樓記、蘭亭、勞山道士"
+ },
+ "zk102-6": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《論語》君子小人義界"
+ },
+ "zk102-7": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "漁父、典論論文、出師表",
+  "why": "名句書寫時代判斷，含出師表、典論論文、漁父"
+ },
+ "zk102-8": {
+  "textcat": "生活情境文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "祠廟楹聯對應人物時代"
+ },
+ "zk102-11": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《韓非子》君術故事"
+ },
+ "zk102-12": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《墨子‧非攻》論辯"
+ },
+ "zk102-13": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《桃花扇‧哀江南》"
+ },
+ "zk102-15": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《唐才子傳》評李杜"
+ },
+ "zk102-17": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "王鐸書論題跋"
+ },
+ "zk102-19": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "諫逐客書、馮諼客孟嘗君",
+  "why": "字義比較，多課文"
+ },
+ "zk102-21": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "馮諼客孟嘗君、鴻門宴、師說、廉恥",
+  "why": "反問句，多課文"
+ },
+ "zk102-23": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詠史詞寄託"
+ },
+ "zk102-24": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《宣驗記》鸚鵡滅火寓言"
+ },
+ "zk103-1": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "出師表",
+  "why": "古今詞義演變"
+ },
+ "zk103-2": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詞性轉品（大學、老子、史記）"
+ },
+ "zk103-6": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詩句四季排序"
+ },
+ "zk103-11": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "現代評論配古典詩句"
+ },
+ "zk103-12": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "現代散文配古典文句"
+ },
+ "zk103-14": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《捫蝨新話》論文人好惡"
+ },
+ "zk103-15": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "羅隱、歐陽脩詠鳥詩"
+ },
+ "zk103-16": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "李璟、晏殊詞"
+ },
+ "zk103-18": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "勸學、馮諼客孟嘗君、鴻門宴、典論論文、岳陽樓記、左忠毅公軼事",
+  "why": "字義比較，多課文"
+ },
+ "zk103-19": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師、馮諼客孟嘗君",
+  "why": "敬詞判斷（文化常識）"
+ },
+ "zk103-20": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "大同與小康、勸學、岳陽樓記",
+  "why": "因果句式，含禮運、勸學、岳陽樓記"
+ },
+ "zk103-21": {
+  "textcat": "文學文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "岳陽樓記、赤壁賦",
+  "why": "借代修辭，含〈岳陽樓記〉"
+ },
+ "zk103-24": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "章學誠論朱陸門戶"
+ },
+ "zk104-2": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "勸學、出師表、師說、廉恥、左忠毅公軼事",
+  "why": "「則」字用法，選項全為課文"
+ },
+ "zk104-5": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "先秦諸子名實論"
+ },
+ "zk104-6": {
+  "textcat": "文學文本",
+  "textcat2": "學術文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "小說情節引《禮記‧昏義》"
+ },
+ "zk104-7": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詠物詩對象"
+ },
+ "zk104-9": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "諸葛亮施政語配論孟"
+ },
+ "zk104-10": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《說苑》豚尹觀晉"
+ },
+ "zk104-11": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《菜根譚》處世論"
+ },
+ "zk104-12": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "郁離子選",
+  "why": "《郁離子‧虎貙》，與〈工之僑獻琴〉同書"
+ },
+ "zk104-19": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "漁父、與陳伯之書、蘭亭集序、虬髯客傳、諫太宗十思疏、項脊軒志、原君",
+  "why": "字義比較，多課文"
+ },
+ "zk104-20": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "鴻門宴、原君",
+  "why": "動量「三」的語法判斷"
+ },
+ "zk104-21": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "南朝樂府雙關"
+ },
+ "zk104-22": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《漢書》與龍榆生論詞曲音樂"
+ },
+ "zk105-3": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《西遊記》段落排序"
+ },
+ "zk105-4": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "喬吉詠瀑散曲"
+ },
+ "zk105-5": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "盧摯散曲時序"
+ },
+ "zk105-7": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "陸游二詩"
+ },
+ "zk105-8": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《傳習錄》論厚薄"
+ },
+ "zk105-9": {
+  "textcat": "生活情境文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "對聯選配題辭"
+ },
+ "zk105-10": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "桃花源記、勞山道士、裨海紀遊",
+  "why": "史學論述配課文選項（勞山道士、裨海紀遊、桃花源記）"
+ },
+ "zk105-12": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "紀昀筆記狐報"
+ },
+ "zk105-14": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《說苑‧立節》"
+ },
+ "zk105-18": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇",
+  "linked_core": "裨海紀遊、臺灣通史序",
+  "why": "甲骨文「涉」字本義（文字學），含臺灣通史序、裨海紀遊"
+ },
+ "zk105-19": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "鴻門宴、出師表、蘭亭集序、師說、虬髯客傳、赤壁賦、項脊軒志、左忠毅公軼事",
+  "why": "字義比較，多課文"
+ },
+ "zk105-22": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇",
+  "linked_core": "勸學、馮諼客孟嘗君、典論論文、醉翁亭記",
+  "why": "意動用法，選項為勸學、馮諼、醉翁亭記等"
+ },
+ "zk105-24": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《後漢書‧方術傳》左慈"
+ },
+ "zk105-nc1": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "非選：林語堂〈論幽默〉與《論語》侍坐章"
+ },
+ "zk106-3": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "司馬光〈諫院題名記〉論諫官"
+ },
+ "zk106-5": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "錢基博記王闓運傳記"
+ },
+ "zk106-6": {
+  "textcat": "生活情境文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "對聯對應人物"
+ },
+ "zk106-7": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《呂氏春秋‧功名》"
+ },
+ "zk106-8": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "履冰之賦"
+ },
+ "zk106-10": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "108-15篇",
+  "linked_core": "鹿港乘桴記",
+  "why": "洪繻〈西螺柑賦〉，與〈鹿港乘桴記〉同作者"
+ },
+ "zk106-11": {
+  "textcat": "生活情境文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《西遊記》中魏徵書信格式"
+ },
+ "zk106-12": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "宇文所安論往事再現"
+ },
+ "zk106-14": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "勸學、桃花源記、廉恥",
+  "why": "呂叔湘《文言虛字》論「其」，語法說明文"
+ },
+ "zk106-16": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "桃花源記",
+  "why": "謝枋得、徐孚遠以桃花源為題的詩"
+ },
+ "zk106-19": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師、馮諼客孟嘗君、鴻門宴、典論論文、原君、勞山道士、左忠毅公軼事",
+  "why": "字義比較，多課文"
+ },
+ "zk106-23": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "武俠小說論劍配老莊"
+ },
+ "zk106-24": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《琵琶記》、沈璟論曲"
+ },
+ "zk106-nc1": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "諫逐客書",
+  "why": "非選以〈諫逐客書〉論人才外流"
+ },
+ "zk107-3": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "諫逐客書、師說、諫太宗十思疏、勸和論",
+  "why": "核心古文的文體歸屬"
+ },
+ "zk107-4": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "臺灣通史序",
+  "why": "連橫《詩薈餘墨》論學詩，與〈臺灣通史序〉同作者"
+ },
+ "zk107-5": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《三國演義》曹操"
+ },
+ "zk107-8": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "",
+  "why": "余蓮論「淡」，配詩句"
+ },
+ "zk107-13": {
+  "textcat": "生活情境文本",
+  "textcat2": "學術文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "共享經濟與古代租賃史料"
+ },
+ "zk107-16": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "蘭亭集序",
+  "why": "鄭毓瑜論〈蘭亭集序〉"
+ },
+ "zk107-23": {
+  "textcat": "科普文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "螟蛉、蜾蠃的生態觀察"
+ },
+ "zk107-26": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "張輔論史記漢書優劣"
+ },
+ "zk107-28": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "鴻門宴",
+  "why": "《史記‧仲尼弟子列傳》與王安石〈子貢論〉"
+ },
+ "zk107-33": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《笑笑錄》掉書袋"
+ },
+ "zk107-36": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "勸學、鴻門宴、典論論文、出師表、師說、虬髯客傳、項脊軒志",
+  "why": "字義比較，多課文"
+ },
+ "zk107-37": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "馮諼客孟嘗君、桃花源記、虬髯客傳、醉翁亭記、勞山道士、左忠毅公軼事",
+  "why": "動詞對象省略，選項多課文"
+ },
+ "zk107-38": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "黃滔〈賈客〉詩"
+ },
+ "zk107-39": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《韓非子‧主道》"
+ },
+ "zk107-40": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "漁父、鴻門宴、赤壁賦、晚遊六橋待月記",
+  "why": "被動句語法說明文"
+ },
+ "zk107-41": {
+  "textcat": "生活情境文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "鬥草遊戲與《鏡花緣》"
+ },
+ "zk108-05": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇",
+  "linked_core": "勸學、原君",
+  "why": "經典文句意義相近判斷"
+ },
+ "zk108-10": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "李白〈行路難〉"
+ },
+ "zk108-11": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《淮南子》等寓言"
+ },
+ "zk108-12": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "先秦典籍常識"
+ },
+ "zk108-17": {
+  "textcat": "科普文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "明人論茶盞瓷器"
+ },
+ "zk108-20": {
+  "textcat": "文學文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《水滸傳》宋江題反詩與樓聯"
+ },
+ "zk108-23": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "論《封神演義》天命觀"
+ },
+ "zk108-25": {
+  "textcat": "學術文本",
+  "textcat2": "文學文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "論古典詩烘襯手法，配詩句"
+ },
+ "zk108-27": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "赤壁賦",
+  "why": "蘇軾〈烏說〉，與〈赤壁賦〉同作者"
+ },
+ "zk108-30": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "陳高贈序論求知於人"
+ },
+ "zk108-32": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "宋濂《燕書》寓言"
+ },
+ "zk108-35": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "桃花源記、始得西山宴遊記、裨海紀遊、臺灣通史序",
+  "why": "句意理解，多課文"
+ },
+ "zk108-36": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師、鴻門宴、典論論文、出師表、虬髯客傳、岳陽樓記、醉翁亭記、勞山道士",
+  "why": "字義比較，多課文"
+ },
+ "zk108-37": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇",
+  "linked_core": "漁父、馮諼客孟嘗君、蘭亭集序、諫太宗十思疏、郁離子選、左忠毅公軼事",
+  "why": "名詞轉動詞，選項多課文"
+ },
+ "zk108-38": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "大同與小康、與陳伯之書、項脊軒志",
+  "why": "前後句解釋關係，含項脊軒志、與陳伯之書、禮運"
+ },
+ "zk108-40": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "辛棄疾詞"
+ },
+ "zk108-41": {
+  "textcat": "科普文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "諫逐客書、赤壁賦",
+  "why": "本能與反射（生理學），選項含赤壁賦、諫逐客書"
+ },
+ "zk109-05": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詠物詩"
+ },
+ "zk109-06": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "王思任〈笑詞序〉"
+ },
+ "zk109-07": {
+  "textcat": "文學文本",
+  "textcat2": "學術文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詩詞曲體裁流派"
+ },
+ "zk109-12": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "中西文化論述配經典"
+ },
+ "zk109-15": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《孔子家語》子路修溝"
+ },
+ "zk109-18": {
+  "textcat": "生活情境文本",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "",
+  "why": "古代老殘照護對照長照"
+ },
+ "zk109-20": {
+  "textcat": "文學文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《紅樓夢》榮國府空間"
+ },
+ "zk109-24": {
+  "textcat": "生活情境文本",
+  "textcat2": "學術文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "王安石辭任書信"
+ },
+ "zk109-26": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "馮諼客孟嘗君",
+  "why": "《史記‧孟嘗君列傳》對照《戰國策》馮諼"
+ },
+ "zk109-31": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "與陳伯之書、始得西山宴遊記、醉翁亭記、裨海紀遊",
+  "why": "身體隱喻論述配課文選項"
+ },
+ "zk109-33": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "赤壁賦",
+  "why": "蘇軾〈遊沙湖〉，與〈赤壁賦〉同作者"
+ },
+ "zk109-35": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "蘭亭集序、師說、虬髯客傳、岳陽樓記、項脊軒志、晚遊六橋待月記、廉恥、左忠毅公軼事",
+  "why": "字義比較，多課文"
+ },
+ "zk109-37": {
+  "textcat": "科普文本",
+  "textcat2": "學術文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "朱熹論疫疾傳染"
+ },
+ "zk109-38": {
+  "textcat": "文學文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇",
+  "linked_core": "裨海紀遊",
+  "why": "觸景憶往，含黃州快哉亭記、裨海紀遊"
+ },
+ "zk109-39": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "金聖歎評點《水滸傳》"
+ },
+ "zk109-40": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "疑問代詞賓語前置"
+ },
+ "zk109-41": {
+  "textcat": "生活情境文本",
+  "textcat2": "學術文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "企業倫理配義利之辨"
+ },
+ "zk110-03": {
+  "textcat": "生活情境文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "請假書信"
+ },
+ "zk110-04": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "項穆《書法雅言》"
+ },
+ "zk110-05": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "108-15篇",
+  "linked_core": "鹿港乘桴記",
+  "why": "洪繻論《周禮》，與〈鹿港乘桴記〉同作者"
+ },
+ "zk110-07": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《誠齋詩話》論四六"
+ },
+ "zk110-08": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "世說新語選、郁離子選、晚遊六橋待月記、原君",
+  "why": "元明清文學史，提及郁離子、袁宏道、原君等課文作者"
+ },
+ "zk110-09": {
+  "textcat": "學術文本",
+  "textcat2": "生活情境文本",
+  "core_list": "",
+  "linked_core": "",
+  "why": "《晏子春秋》論忠臣，延伸職場"
+ },
+ "zk110-12": {
+  "textcat": "文學文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "汪曾祺小說配古典詩句"
+ },
+ "zk110-16": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "詞話評柳永"
+ },
+ "zk110-21": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "勸和論",
+  "why": "修辭學表格配王若虛、勸和論、竹枝詞"
+ },
+ "zk110-24": {
+  "textcat": "延伸",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "燭之武退秦師",
+  "why": "《韓非子‧說難》並以燭之武說秦伯驗證"
+ },
+ "zk110-28": {
+  "textcat": "部定古文",
+  "textcat2": "學術文本",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "大同與小康",
+  "why": "〈大同與小康〉與注疏新解"
+ },
+ "zk110-33": {
+  "textcat": "學術文本",
+  "textcat2": "",
+  "core_list": "",
+  "linked_core": "",
+  "why": "論「眾好眾惡必察」的說理文"
+ },
+ "zk110-36": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "典論論文、出師表、虬髯客傳、岳陽樓記、左忠毅公軼事、臺灣通史序",
+  "why": "動補結構，多課文"
+ },
+ "zk110-37": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "勸學、師說、赤壁賦、項脊軒志、臺灣通史序",
+  "why": "銜接照應，五篇皆課文"
+ },
+ "zk110-38": {
+  "textcat": "部定古文",
+  "textcat2": "",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "勸學、鴻門宴、與陳伯之書、蘭亭集序、郁離子選、原君、勞山道士、裨海紀遊",
+  "why": "字義比較，多課文"
+ },
+ "zk110-39": {
+  "textcat": "延伸",
+  "textcat2": "文學文本",
+  "core_list": "101課綱30篇",
+  "linked_core": "馮諼客孟嘗君",
+  "why": "《戰國策‧趙策》馮忌，與〈馮諼〉同書"
+ },
+ "zk110-40": {
+  "textcat": "學術文本",
+  "textcat2": "部定古文",
+  "core_list": "101課綱30篇；108-15篇",
+  "linked_core": "典論論文、桃花源記、始得西山宴遊記、諫太宗十思疏",
+  "why": "論國文考試，引劉禹錫〈昏鏡詞〉，並以課文所學判讀"
+ }
+}

@@ -108,6 +108,25 @@ h3{font-size:1.05rem;margin:20px 0 8px}
 .chip:hover{border-color:var(--accent);color:var(--accent)}
 .chip span{margin-left:6px;font-size:.78rem;color:var(--muted)}
 
+/* ---------- text categories ---------- */
+.tcs{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.tcard{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;cursor:pointer;transition:transform .15s,border-color .15s}
+.tcard:hover{transform:translateY(-2px);border-color:var(--accent)}
+.tcard .ico{width:56px;height:56px;border-radius:14px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+.tcard a{color:var(--accent)}
+.tag.tc{background:var(--ok-soft);color:var(--ok)}
+.method .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;position:sticky;top:64px;background:var(--paper);padding:8px 0;z-index:2;border-bottom:1px solid var(--line)}
+.method .toc a{font-size:.88rem;border:1px solid var(--line);border-radius:999px;padding:2px 12px;text-decoration:none}
+.method .cat{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:16px 0;background:var(--bg)}
+.method .cat h3{margin-top:0}
+.method .demo{background:var(--paper);border-left:4px solid var(--bar);padding:8px 12px;border-radius:6px;margin:8px 0}
+.method .practice-btn{margin-top:6px}
+.method .corelist{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px;margin:10px 0}
+.method .corebtn{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:var(--paper);text-decoration:none;color:var(--ink)}
+.method .corebtn:hover{border-color:var(--accent);color:var(--accent)}
+.method .corebtn span{font-size:.78rem;color:var(--muted)}
+.method ol{padding-left:1.4em}.method ol li{margin:2px 0}
+
 /* ---------- charts ---------- */
 .bars{display:flex;flex-direction:column;gap:6px}
 .bar{display:grid;grid-template-columns:110px 1fr 40px;align-items:center;gap:8px;font-size:.88rem}
@@ -227,7 +246,7 @@ footer{color:var(--muted);font-size:.8rem;text-align:center;padding:30px 0 40px}
     <div id="wrongBox"></div>
   </div>
 </main>
-<footer class="wrap">題目來源：歷屆學科能力測驗、指定科目考試（大考中心公布試題）　｜　僅供課堂練習使用　｜　<a href="../../site/index.html" style="color:inherit">國中版練習場 →</a></footer>
+<footer class="wrap">題目來源：歷屆學科能力測驗、指定科目考試（大考中心公布試題）　｜　僅供課堂練習使用　｜　<a href="../../site/index.html" style="color:inherit">國中版練習場 →</a>　｜　<a href="teacher.html" style="color:inherit">教師研究報告</a></footer>
 <script src="data.js"></script>
 <script>
 const ITEMS = window.ITEMS || [], EXAMS = window.EXAMS || [];
@@ -242,6 +261,15 @@ const GENRE_INFO = {
   '經典語錄':['g-classics','《論語》《孟子》裡的名句'],
   '古典詩詞曲':['g-poetry','讀懂詩人想說的心情'],
   '其他':['g-other','對聯、題辭和古人的生活常識']
+};
+const TEXTCATS = ['部定古文','延伸','學術文本','科普文本','生活情境文本','文學文本'];
+const TEXTCAT_INFO = {
+  '部定古文':['📜','課本裡的核心古文，直接考或拿來和課外文章比'],
+  '延伸':['🔗','跟課文同作者、同主題的課外文章'],
+  '學術文本':['🔍','古人談學問、評文章、考證字詞的文字'],
+  '科普文本':['🔭','古代的科技、醫藥、天文與自然觀察'],
+  '生活情境文本':['✉️','書信、對聯、圖表、遊戲規則等生活任務'],
+  '文學文本':['🌙','詩詞、散文、小說、史傳故事'],
 };
 const TYPES = ['字詞解釋','虛詞句式','句意理解','文意推論','主旨寓意','人物情感','寫作手法','比較閱讀','文化常識','典故出處','詩詞賞析'];
 const TYPE_LABEL = {
@@ -308,14 +336,15 @@ const LEVELS = [
 function countQ(list){ return list.reduce((s, i) => s + (i.questions||[]).length, 0); }
 function renderOverview(){
   const nq = countQ(ITEMS);
-  const gq = {}, tq = {};
+  const gq = {}, tq = {}, tcq = {};
   ITEMS.forEach(i => {
+    [i.textcat, i.textcat2].filter(Boolean).forEach(x => tcq[x] = (tcq[x]||0) + (i.questions||[]).length);
     gq[i.genre] = (gq[i.genre]||0) + (i.questions||[]).length;
     (i.types||[]).forEach(x => tq[x] = (tq[x]||0) + (i.questions||[]).length);
   });
   const mine = Object.keys(done).length, right = Object.values(done).filter(Boolean).length;
   const nWrong = Object.keys(wrong).length;
-  const base = {kind:'', y0:EXAMS[0]?.year, y1:EXAMS[EXAMS.length-1]?.year, genre:'', type:'', form:'', diff:'', qt:'', q:''};
+  const base = {kind:'', y0:EXAMS[0]?.year, y1:EXAMS[EXAMS.length-1]?.year, tc:'', genre:'', type:'', form:'', diff:'', qt:'', q:''};
   $('#v-overview').innerHTML = `
   ${art('hero', '2400×1000', 'hero', `<div class="veil"></div><div class="copy">
       <h1>高中文言文練習場</h1>
@@ -333,6 +362,8 @@ function renderOverview(){
     const n = countQ(applyFilters({...base, ...l.preset}));
     return `<div class="card level" data-level="${k}"><div class="lv">${l.star}</div><div><b>${l.name}</b>　<span class="meta">${n} 題</span><div class="meta">${l.desc}</div></div></div>`;
   }).join('')}</div>
+  <h2>依文本類別練習</h2>
+  <div class="grid tcs">${TEXTCATS.filter(x => tcq[x]).map(x => `<div class="card tcard" data-tc="${x}"><div class="ico">${TEXTCAT_INFO[x][0]}</div><div><b>${x}</b>　<span class="meta">${tcq[x]} 題</span><div class="meta">${TEXTCAT_INFO[x][1]}</div><a class="meta" href="#" data-howto="${x}">怎麼讀？</a></div></div>`).join('')}</div>
   <h2>選一種文章來練</h2>
   <div class="grid genres">${GENRES.filter(x => gq[x]).map(x => `
     <div class="card gcard" data-genre="${x}">${art(GENRE_INFO[x][0], '1200×900')}
@@ -342,12 +373,13 @@ function renderOverview(){
   <div class="chips">${TYPES.filter(x => tq[x]).map(x => `<button class="chip" data-type="${x}">${tl(x)}<span>${tq[x]}</span></button>`).join('')}</div>`;
   document.querySelectorAll('.gcard').forEach(c => c.onclick = () => openBank({genre: c.dataset.genre}));
   document.querySelectorAll('.chip').forEach(c => c.onclick = () => openBank({type: c.dataset.type}));
+  document.querySelectorAll('.tcard').forEach(c => c.onclick = e => { if (e.target.dataset.howto) return; openBank({tc: c.dataset.tc}); });
   document.querySelectorAll('.level').forEach(c => c.onclick = () => startPreset(LEVELS[+c.dataset.level].preset));
   mountArt($('#v-overview'));
 }
 function startPreset(preset){
   const box = $('#fp');
-  box.querySelectorAll('[data-f]').forEach(el => { if (['kind','genre','type','form','diff','qt','q'].includes(el.dataset.f)) el.value = ''; });
+  box.querySelectorAll('[data-f]').forEach(el => { if (['kind','tc','genre','type','form','diff','qt','q'].includes(el.dataset.f)) el.value = ''; });
   Object.entries(preset).forEach(([k,v]) => { const el = box.querySelector(`[data-f="${k}"]`); if (el) el.value = v; });
   $('#go').click();
 }
@@ -359,6 +391,7 @@ function filterUI(id, extra=''){
     <select data-f="kind"><option value="">學測＋指考</option><option>學測</option><option>指考</option></select>
     <select data-f="y0">${years.map((y,i)=>`<option ${i===0?'selected':''}>${y}</option>`).join('')}</select>～
     <select data-f="y1">${years.map((y,i)=>`<option ${i===years.length-1?'selected':''}>${y}</option>`).join('')}</select>
+    <select data-f="tc"><option value="">全部文本類別</option>${TEXTCATS.map(x=>`<option>${x}</option>`).join('')}</select>
     <select data-f="genre"><option value="">全部文章</option>${GENRES.map(x=>`<option>${x}</option>`).join('')}</select>
     <select data-f="type"><option value="">全部題型</option>${TYPES.map(x=>`<option value="${x}">${tl(x)}</option>`).join('')}</select>
     <select data-f="form"><option value="">單題＋題組</option><option>單題</option><option>題組</option></select>
@@ -370,7 +403,7 @@ function filterUI(id, extra=''){
 function readFilters(id){ const f = {}; document.querySelectorAll(`#${id} [data-f]`).forEach(el => f[el.dataset.f] = el.value); return f; }
 function applyFilters(f){
   return ITEMS.filter(i => (!f.kind || i.kind===f.kind) && i.year >= +f.y0 && i.year <= +f.y1 &&
-    (!f.genre || i.genre===f.genre) && (!f.type || (i.types||[]).includes(f.type)) && (!f.form || i.form===f.form) &&
+    (!f.genre || i.genre===f.genre) && (!f.tc || i.textcat===f.tc || i.textcat2===f.tc) && (!f.type || (i.types||[]).includes(f.type)) && (!f.form || i.form===f.form) &&
     (!f.diff || i.difficulty===f.diff) && (!f.qt || (i.questions||[]).some(q => (q.qtype||'單選')===f.qt)) &&
     (!f.q || [i.source,i.author,i.passage,i.translation,i.label].join(' ').includes(f.q)));
 }
@@ -381,7 +414,7 @@ function itemRow(i){
   const qlabel = nums.length > 1 ? `第 ${nums[0]}～${nums[nums.length-1]} 題` : `第 ${nums[0]} 題`;
   return `<div class="card row" data-id="${esc(i.id)}"><div>
     <div class="ttl">${esc(i.label)}・${qlabel}　<span class="meta">${esc(cleanSrc(i.source))}</span></div>
-    <div><span class="tag g">${esc(i.form)}</span><span class="tag g">${esc(i.genre)}</span>${(i.types||[]).map(t=>`<span class="tag">${esc(tl(t))}</span>`).join('')}<span class="tag g">${STARS[i.difficulty]||''}</span></div>
+    <div><span class="tag g">${esc(i.form)}</span>${i.textcat ? `<span class="tag tc">${esc(i.textcat)}</span>` : ''}<span class="tag g">${esc(i.genre)}</span>${(i.types||[]).map(t=>`<span class="tag">${esc(tl(t))}</span>`).join('')}<span class="tag g">${STARS[i.difficulty]||''}</span></div>
   </div><div class="meta">${statusOf(i)}</div></div>`;
 }
 function statusOf(i){
@@ -400,7 +433,7 @@ function updBank(){
   $('#bankList').innerHTML = list.map(itemRow).join('') || '<div class="empty">沒有符合條件的題目</div>';
 }
 function openBank(preset){
-  document.querySelectorAll('#fb [data-f]').forEach(el => { if (['kind','genre','type','form','diff','qt','q'].includes(el.dataset.f)) el.value = ''; });
+  document.querySelectorAll('#fb [data-f]').forEach(el => { if (['kind','tc','genre','type','form','diff','qt','q'].includes(el.dataset.f)) el.value = ''; });
   Object.entries(preset).forEach(([k,v]) => { const el = $(`#fb [data-f="${k}"]`); if (el) el.value = v; });
   updBank(); show('bank');
 }
@@ -513,6 +546,12 @@ function renderWrong(){
 }
 
 /* ---------- method: step icons art/step1..7 replace the number when present ---------- */
+document.addEventListener('click', e => {
+  const p = e.target.closest('[data-practice-tc]'); if (p){ e.preventDefault(); openBank({tc: p.dataset.practiceTc}); return; }
+  const st = e.target.closest('[data-open-set]'); if (st){ e.preventDefault(); const list = st.dataset.openSet.split(',').map(id => ITEMS.find(i => i.id === id)).filter(Boolean); if (list.length) startPractice(list, 0); return; }
+  const q = e.target.closest('[data-open-item]'); if (q){ e.preventDefault(); const it = ITEMS.find(i => i.id === q.dataset.openItem); if (it) startPractice([it], 0); return; }
+  const h = e.target.closest('[data-howto]'); if (h){ e.preventDefault(); show('method'); const t = document.getElementById('tc-' + h.dataset.howto); if (t) setTimeout(() => t.scrollIntoView({behavior:'smooth'}), 50); }
+});
 function renderMethod(){
   $('#methodBox').innerHTML = window.METHOD || '<p class="meta">（拆解心法整理中）</p>';
   document.querySelectorAll('#methodBox .step .num').forEach((n, k) => {
