@@ -46,6 +46,9 @@ main{padding:20px 0 70px}
   color:var(--accent);font-size:.8rem;font-family:ui-monospace,Consolas,monospace;padding:6px;line-height:1.4}
 .art .ph b{font-size:.95rem}
 .art.loaded .ph{display:none}
+.art.icon .ph{display:none}
+.art.icon.loaded .fb{display:none}
+.art.icon:not(.loaded) img{display:none}
 .art:not(.loaded) img{display:none}
 
 /* ---------- hero ---------- */
@@ -271,7 +274,7 @@ function mountArt(root = document){
     el.dataset.mounted = 1;
     const name = el.dataset.art, size = el.dataset.size || '';
     const ph = document.createElement('div'); ph.className = 'ph';
-    ph.innerHTML = el.classList.contains('logo') ? '' : `<b>art/${name}.jpg</b><span>${size}</span>`;
+    ph.innerHTML = (el.classList.contains('logo') || el.classList.contains('icon')) ? '' : `<b>art/${name}.jpg</b><span>${size}</span>`;
     const img = new Image(); img.alt = ''; let i = 0;
     img.onload = () => el.classList.add('loaded');
     img.onerror = () => { if (++i < EXTS.length) img.src = `art/${name}.${EXTS[i]}`; };
@@ -331,7 +334,7 @@ function renderOverview(){
   <h2>從一篇讀懂開始</h2>
   <div class="grid levels">${LEVELS.map((l, k) => {
     const n = countQ(applyFilters({...base, ...l.preset}));
-    return `<div class="card level" data-level="${k}"><div class="lv">${l.star}</div><div><b>${l.name}</b>　<span class="meta">${n} 題</span><div class="meta">${l.desc}</div></div></div>`;
+    return `<div class="card level" data-level="${k}">${art('lv-'+(k+1), '800×800', 'lv icon', `<span class="fb">${l.star}</span>`)}<div><b>${l.name}</b>　<span class="meta">${n} 題</span><div class="meta">${l.desc}</div></div></div>`;
   }).join('')}</div>
   <h2>在不同篇章裡相逢</h2>
   <div class="grid genres">${GENRES.filter(x => gq[x]).map(x => `

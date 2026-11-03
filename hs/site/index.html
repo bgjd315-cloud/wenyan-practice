@@ -46,6 +46,9 @@ main{padding:20px 0 70px}
   color:var(--accent);font-size:.8rem;font-family:ui-monospace,Consolas,monospace;padding:6px;line-height:1.4}
 .art .ph b{font-size:.95rem}
 .art.loaded .ph{display:none}
+.art.icon .ph{display:none}
+.art.icon.loaded .fb{display:none}
+.art.icon:not(.loaded) img{display:none}
 .art:not(.loaded) img{display:none}
 
 /* ---------- hero ---------- */
@@ -267,12 +270,12 @@ const GENRE_INFO = {
 };
 const TEXTCATS = ['部定古文','延伸','學術文本','科普文本','生活情境文本','文學文本'];
 const TEXTCAT_INFO = {
-  '部定古文':['📜','課本裡的核心古文，直接考或拿來和課外文章比'],
-  '延伸':['🔗','跟課文同作者、同主題的課外文章'],
-  '學術文本':['🔍','古人談學問、評文章、考證字詞的文字'],
-  '科普文本':['🔭','古代的科技、醫藥、天文與自然觀察'],
-  '生活情境文本':['✉️','書信、對聯、圖表、遊戲規則等生活任務'],
-  '文學文本':['🌙','詩詞、散文、小說、史傳故事'],
+  '部定古文':['📜','課本裡的核心古文，直接考或拿來和課外文章比','tc-core'],
+  '延伸':['🔗','跟課文同作者、同主題的課外文章','tc-ext'],
+  '學術文本':['🔍','古人談學問、評文章、考證字詞的文字','tc-academic'],
+  '科普文本':['🔭','古代的科技、醫藥、天文與自然觀察','tc-science'],
+  '生活情境文本':['✉️','書信、對聯、圖表、遊戲規則等生活任務','tc-life'],
+  '文學文本':['🌙','詩詞、散文、小說、史傳故事','tc-lit'],
 };
 const TYPES = ['字詞解釋','虛詞句式','句意理解','文意推論','主旨寓意','人物情感','寫作手法','比較閱讀','文化常識','典故出處','詩詞賞析'];
 const TYPE_LABEL = {
@@ -303,7 +306,7 @@ function mountArt(root = document){
     el.dataset.mounted = 1;
     const name = el.dataset.art, size = el.dataset.size || '';
     const ph = document.createElement('div'); ph.className = 'ph';
-    ph.innerHTML = el.classList.contains('logo') ? '' : `<b>art/${name}.jpg</b><span>${size}</span>`;
+    ph.innerHTML = (el.classList.contains('logo') || el.classList.contains('icon')) ? '' : `<b>art/${name}.jpg</b><span>${size}</span>`;
     const img = new Image(); img.alt = ''; let i = 0;
     if (el.dataset.pos) img.style.objectPosition = el.dataset.pos;
     img.onload = () => el.classList.add('loaded');
@@ -366,10 +369,10 @@ function renderOverview(){
   <h2>從一篇讀懂開始</h2>
   <div class="grid levels">${LEVELS.map((l, k) => {
     const n = countQ(applyFilters({...base, ...l.preset}));
-    return `<div class="card level" data-level="${k}"><div class="lv">${l.star}</div><div><b>${l.name}</b>　<span class="meta">${n} 題</span><div class="meta">${l.desc}</div></div></div>`;
+    return `<div class="card level" data-level="${k}">${art('lv-'+(k+1), '800×800', 'lv icon', `<span class="fb">${l.star}</span>`)}<div><b>${l.name}</b>　<span class="meta">${n} 題</span><div class="meta">${l.desc}</div></div></div>`;
   }).join('')}</div>
   <h2>依文本類別練習</h2>
-  <div class="grid tcs">${TEXTCATS.filter(x => tcq[x]).map(x => `<div class="card tcard" data-tc="${x}"><div class="ico">${TEXTCAT_INFO[x][0]}</div><div><b>${x}</b>　<span class="meta">${tcq[x]} 題</span><div class="meta">${TEXTCAT_INFO[x][1]}</div><a class="meta" href="#" data-howto="${x}">怎麼讀？</a></div></div>`).join('')}</div>
+  <div class="grid tcs">${TEXTCATS.filter(x => tcq[x]).map(x => `<div class="card tcard" data-tc="${x}">${art(TEXTCAT_INFO[x][2], '800×800', 'ico icon', `<span class="fb">${TEXTCAT_INFO[x][0]}</span>`)}<div><b>${x}</b>　<span class="meta">${tcq[x]} 題</span><div class="meta">${TEXTCAT_INFO[x][1]}</div><a class="meta" href="#" data-howto="${x}">怎麼讀？</a></div></div>`).join('')}</div>
   <h2>在不同篇章裡相逢</h2>
   <div class="grid genres">${GENRES.filter(x => gq[x]).map(x => `
     <div class="card gcard" data-genre="${x}">${art(GENRE_INFO[x][0], '1200×900')}
