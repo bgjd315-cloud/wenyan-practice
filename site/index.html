@@ -265,7 +265,7 @@ let wrong = store.get('wrong', {});
 let done = store.get('done', {});
 
 /* ---------- art slots: art/<name>.jpg → .png → .webp, otherwise show a placeholder ---------- */
-const EXTS = ['png','jpg','webp'];
+const EXTS = ['webp','png','jpg'];
 function mountArt(root = document){
   root.querySelectorAll('.art[data-art]:not([data-mounted])').forEach(el => {
     el.dataset.mounted = 1;
