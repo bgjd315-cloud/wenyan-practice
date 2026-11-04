@@ -181,7 +181,17 @@ select,input[type=search],input[type=number]{font:inherit;font-size:.9rem;paddin
 /* ---------- empty state ---------- */
 .emptyart{max-width:260px;margin:10px auto;aspect-ratio:1;border-radius:50%}
 footer{color:var(--muted);font-size:.8rem;text-align:center;padding:30px 0 40px}
+
+/* ---------- a11y / sticky header offset (--hdr 由 JS 依實際表頭高度設定) ---------- */
+:root{--hdr:64px}
+#pArea,.method [id]{scroll-margin-top:calc(var(--hdr) + 12px)}
+#pArea:not(:empty){min-height:calc(100vh - var(--hdr))}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.opt.right::after{content:" ✓"}
+.opt.wrong::after{content:" ✕"}
+button.switch{background:none;border:0;border-bottom:1px dashed;padding:0;font:inherit;font-size:.85rem;color:var(--accent)}
 @media (max-width:640px){
+  select,input[type=search],input[type=number],textarea{font-size:16px}
   .bar{grid-template-columns:80px 1fr 34px}
   nav{margin-left:0;width:100%;justify-content:space-between}
   nav button{padding:5px 9px}
@@ -287,7 +297,7 @@ function art(name, size, cls = '', inner = ''){ return `<div class="art ${cls}" 
 
 /* ---------- nav ---------- */
 function show(v){
-  document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  document.querySelectorAll('#nav button').forEach(b => { b.classList.toggle('on', b.dataset.v === v); if (b.dataset.v === v) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
   document.querySelectorAll('main > div').forEach(d => d.classList.toggle('hidden', d.id !== 'v-' + v));
   if (v === 'wrong') renderWrong();
   if (v === 'overview') renderOverview();
@@ -372,7 +382,7 @@ function filterUI(id, extra=''){
 }
 function readFilters(id){ const f = {}; document.querySelectorAll(`#${id} [data-f]`).forEach(el => f[el.dataset.f] = el.value); return f; }
 function applyFilters(f){
-  return ITEMS.filter(i => (!f.kind || i.kind===f.kind) && i.year >= +f.y0 && i.year <= +f.y1 &&
+  return ITEMS.filter(i => (!f.kind || i.kind===f.kind) && i.year >= Math.min(+f.y0, +f.y1) && i.year <= Math.max(+f.y0, +f.y1) &&
     (!f.genre || i.genre===f.genre) && (!f.type || (i.types||[]).includes(f.type)) && (!f.form || i.form===f.form) &&
     (!f.diff || i.difficulty===f.diff) &&
     (!f.q || [i.source,i.author,i.passage,i.translation,i.label].join(' ').includes(f.q)));
@@ -417,25 +427,27 @@ function renderPracticeHome(){
   $('#go').onclick = () => {
     const f = readFilters('fp'); let list = applyFilters(f);
     if (f.order === 'new') list = list.filter(i => (i.questions||[]).every(q => done[i.id+'#'+q.n] === undefined));
-    if (f.order !== 'seq') list = list.sort(() => Math.random() - .5);
+    if (f.order !== 'seq') list = shuffle(list);
     const n = Math.max(1, +f.n || 10), out = []; let c = 0;
     for (const i of list){ if (c >= n) break; out.push(i); c += (i.questions||[]).length; }
     if (!out.length){ $('#pArea').innerHTML = '<div class="empty">沒有符合條件的題目</div>'; return; }
     startPractice(out, 0);
   };
 }
-function startPractice(list, idx){ queue = list; qi = idx; show('practice'); renderQ(); }
+function shuffle(a){ a = a.slice(); for (let k = a.length - 1; k > 0; k--){ const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; }
+/* 開始作答時直接捲到題目，手機上不用再滑過橫幅和篩選列 */
+function startPractice(list, idx){ queue = list; qi = idx; show('practice'); renderQ(); $('#pArea').scrollIntoView(); }
 function renderQ(){
   const i = queue[qi]; if (!i) return;
   const qs = i.questions || [];
   $('#pArea').innerHTML = `<div class="card qcard">
     <div class="progress"><i style="width:${(qi+1)/queue.length*100}%"></i></div>
     <div class="qhead"><div><b>${esc(i.label)}</b>　<span class="meta">第 ${qi+1} / ${queue.length} 組　${STARS[i.difficulty]||''}</span></div>
-      <span class="switch" id="txtTog">顯示文字版</span></div>
-    <img class="qimg" src="${esc(i.img)}" alt="${esc(i.label)} 原題截圖">
+      <button type="button" class="switch" id="txtTog" aria-expanded="false" aria-controls="txtVer">顯示文字版</button></div>
+    <img class="qimg" src="${esc(i.img)}" alt="${esc(i.label)} 原題截圖（可按「顯示文字版」閱讀題目文字）" decoding="async">
     <div id="txtVer" class="hidden txtv">${i.passage && i.form==='題組' ? `<div class="qblock passage">${esc(i.passage)}</div>` : ''}
       ${qs.map(q => `<div class="qblock"><b>${q.n}.</b> ${esc(q.stem)}<br>${Object.entries(q.options||{}).map(([k,v])=>`(${k}) ${esc(v)}`).join('<br>')}</div>`).join('')}</div>
-    <div class="answers">${qs.map(q => `<div class="qblock" data-n="${q.n}"><b>第 ${q.n} 題</b><div class="opts">${['A','B','C','D'].map(k=>`<button class="opt" data-k="${k}">${k}</button>`).join('')}</div></div>`).join('')}</div>
+    <div class="answers">${qs.map(q => `<div class="qblock" data-n="${q.n}" role="group" aria-label="第 ${q.n} 題作答"><b>第 ${q.n} 題</b><div class="opts">${['A','B','C','D'].map(k=>`<button type="button" class="opt" data-k="${k}" aria-pressed="false">${k}</button>`).join('')}</div></div>`).join('')}</div>
     <div class="nav2"><button class="btn ghost" id="prev" ${qi?'':'disabled'}>上一組</button>
       <button class="btn" id="check">對答案・看解析</button>
       <button class="btn ghost" id="next" ${qi<queue.length-1?'':'disabled'}>下一組</button></div>
@@ -443,9 +455,10 @@ function renderQ(){
   const area = $('#pArea'), pick = {};
   area.querySelectorAll('.qblock[data-n]').forEach(b => b.onclick = e => {
     const k = e.target.dataset.k; if (!k || b.dataset.locked) return;
-    pick[b.dataset.n] = k; b.querySelectorAll('.opt').forEach(o => o.classList.toggle('sel', o.dataset.k === k));
+    pick[b.dataset.n] = k; b.querySelectorAll('.opt').forEach(o => { o.classList.toggle('sel', o.dataset.k === k); o.setAttribute('aria-pressed', o.dataset.k === k); });
   });
-  $('#txtTog').onclick = () => $('#txtVer').classList.toggle('hidden');
+  $('#txtTog').onclick = () => { const open = !$('#txtVer').classList.toggle('hidden'); $('#txtTog').setAttribute('aria-expanded', open); $('#txtTog').textContent = open ? '隱藏文字版' : '顯示文字版'; };
+  if (queue[qi+1]) new Image().src = queue[qi+1].img;   // 預先下載下一組的截圖
   $('#prev').onclick = () => { qi--; renderQ(); area.scrollIntoView(); };
   $('#next').onclick = () => { qi++; renderQ(); area.scrollIntoView(); };
   $('#check').onclick = () => {
@@ -502,7 +515,16 @@ function renderMethod(){
   });
 }
 
-renderOverview(); renderMethod(); renderBank(); renderPracticeHome(); mountArt();
+/* ---------- 鍵盤操作：可點的卡片也能用 Tab 選到、Enter／空白鍵開啟 ---------- */
+const CLICKABLE = '.brand,.kpi[data-go],.level,.gcard,.tcard,.row[data-id]';
+function a11y(){ document.querySelectorAll(CLICKABLE).forEach(el => { if (!el.hasAttribute('tabindex')){ el.tabIndex = 0; el.setAttribute('role', 'button'); } }); }
+new MutationObserver(a11y).observe(document.querySelector('main'), {childList: true, subtree: true});
+document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches(CLICKABLE)){ e.preventDefault(); e.target.click(); } });
+/* 手機上表頭會換行變高，讓置頂目錄、捲動定位跟著表頭實際高度 */
+function setHdr(){ document.documentElement.style.setProperty('--hdr', document.querySelector('header').offsetHeight + 'px'); }
+addEventListener('resize', setHdr);
+
+renderOverview(); renderMethod(); renderBank(); renderPracticeHome(); mountArt(); a11y(); setHdr();
 </script>
 </body>
 </html>
