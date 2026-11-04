@@ -13,5 +13,6 @@
 - `site/art/`：網站插圖。
 - `raw/data/`、`hs/raw/data/`：每份考卷的題目資料（含給老師看的官方說明、疑義釋復、出處備註）。
 - `scripts/build.py`：產生網站資料（`python scripts/build.py` 國中版、`python scripts/build.py hs` 高中版）。
+- `scripts/validate.py`：檢查題目資料是否完整、圖片是否存在（`python scripts/validate.py all`）。改完題目資料、建置前先跑一次；出現 ERROR 就要修，WARN 請人工確認。
 
 題目來源：國立臺灣師範大學心理與教育測驗研究發展中心、大學入學考試中心公布之歷屆試題，僅供教學練習使用。
