@@ -2,7 +2,8 @@
 
 python scripts/validate.py        檢查國中版（raw/data → site/）
 python scripts/validate.py hs     檢查高中版（hs/raw/data → hs/site/）
-python scripts/validate.py all    兩版都檢查
+python scripts/validate.py tc     檢查統測版；et 檢查二技版
+python scripts/validate.py all    四版都檢查
 
 ERROR：一定要修，否則網站會壞（缺圖、答案不在選項裡、題號重複……）
 WARN ：可能有問題，請人工確認（解析裡寫的答案和標準答案不同、題號不連續……）
@@ -91,9 +92,10 @@ def check_question(r, where, q, hs):
         r.warn(where, f'解析寫「答案 {"/".join(sorted(claim))}」，標準答案卻是 {a}')
 
 
-def check(hs):
-    base = os.path.join(ROOT, 'hs') if hs else ROOT
-    r = Report('高中版' if hs else '國中版')
+def check(ver):
+    hs = ver == 'hs'
+    base = os.path.join(ROOT, ver) if ver else ROOT
+    r = Report({'': '國中版', 'hs': '高中版', 'tc': '統測版', 'et': '二技版'}[ver])
     files = sorted(glob.glob(os.path.join(base, 'raw', 'data', '*.json')))
     if not files:
         r.err('raw/data', '找不到任何題目資料')
@@ -243,8 +245,8 @@ def check(hs):
 if __name__ == '__main__':
     sys.stdout.reconfigure(encoding='utf-8')
     arg = sys.argv[1] if len(sys.argv) > 1 else ''
-    which = [False, True] if arg == 'all' else [arg == 'hs']
-    reports = [check(hs) for hs in which]
+    which = ['', 'hs', 'tc', 'et'] if arg == 'all' else [arg]
+    reports = [check(v) for v in which]
     for rep in reports:
         rep.print()
     sys.exit(1 if any(rep.errors for rep in reports) else 0)
