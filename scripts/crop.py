@@ -8,6 +8,8 @@ BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'raw')
 key, spec, out = sys.argv[1], sys.argv[2], sys.argv[3]
 if key[:2] in ('xc', 'zk'):   # 高中：學測 xc、指考 zk
     BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'hs', 'raw')
+elif key[:2] in ('tc', 'et'):   # 技職：統測 tc、二技 et
+    BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', key[:2], 'raw')
 parts = []
 for seg in spec.split(';'):
     f = seg.strip().split(':')

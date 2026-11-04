@@ -1,12 +1,18 @@
 """Merge raw/data/*.json into site/data.js (window.EXAMS / window.ITEMS / window.METHOD).
 python build.py        國中版（raw → site）
-python build.py hs     高中版（hs/raw → hs/site）"""
+python build.py hs     高中版（hs/raw → hs/site）
+python build.py tc     統測版（tc/raw → tc/site）
+python build.py et     二技版（et/raw → et/site）"""
 import json, glob, os, re, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-HS = len(sys.argv) > 1 and sys.argv[1] == 'hs'
-os.chdir(os.path.join(ROOT, 'hs') if HS else ROOT)
+VER = sys.argv[1] if len(sys.argv) > 1 else ''
+HS = VER == 'hs'
+VT = VER in ('tc', 'et')   # 技職：統測、二技
+os.chdir(os.path.join(ROOT, VER) if VER else ROOT)
 
 def label(key):
+    if VT:
+        return f'{key[2:]}{"統測" if key.startswith("tc") else "二技"}'
     if HS:
         return f'{key[2:]}{"學測" if key.startswith("xc") else "指考"}'
     m = re.match(r'bc(\d+)-(\w+)', key)
@@ -18,15 +24,15 @@ def label(key):
     return f'{key[2:]}年{"試辦" if key == "hk102" else ""}會考'
 
 def kind(key):
-    return {'xc': '學測', 'zk': '指考', 'bc': '基測', 'hk': '會考'}[key[:2]]
+    return {'xc': '學測', 'zk': '指考', 'tc': '統測', 'et': '二技', 'bc': '基測', 'hk': '會考'}[key[:2]]
 
 def order(key):
-    m = re.match(r'(bc|hk|xc|zk)(\d+)(?:-(\w+))?', key)
+    m = re.match(r'(bc|hk|xc|zk|tc|et)(\d+)(?:-(\w+))?', key)
     t, y, s = m.groups()
-    return (int(y), 0 if t in ('bc', 'xc') else 1, {'1': 0, '2': 1, 'nbk': 2}.get(s or '', 0))
+    return (int(y), 0 if t in ('bc', 'xc', 'tc') else 1, {'1': 0, '2': 1, 'nbk': 2}.get(s or '', 0))
 
 def answer_ok(q):
-    if HS and q.get('qtype') == '非選':
+    if (HS or VT) and q.get('qtype') == '非選':
         return True
     a = q.get('answer') or ''
     return bool(a) and all(c in q.get('options', {}) for c in a) and (len(a) == 1 or q.get('qtype') == '多選')

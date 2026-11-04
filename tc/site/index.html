@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字裡山河｜技高文言閱讀・統測歷屆試題練習</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&display=swap">
+<style>
+:root{
+  --bg:#f5f0e6; --paper:#fffcf5; --ink:#2b2622; --muted:#7a6f64; --line:#e3d9c8;
+  --accent:#a23b2a; --accent-soft:#f3e2da; --ok:#2f7a4f; --ok-soft:#e1f1e6; --bad:#b03a2e; --bad-soft:#f8e1de;
+  --bar:#b9876a; --bar2:#5e7d8c; --shadow:0 2px 10px rgba(70,45,20,.07);
+  --hero-ink:#fffaf0; --radius:14px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#1b1916; --paper:#24211d; --ink:#ece6dd; --muted:#a59a8d; --line:#3a352f;
+  --accent:#e08a74; --accent-soft:#3c2a24; --ok:#7cc79a; --ok-soft:#1f3328; --bad:#ef8a7d; --bad-soft:#3d2421;
+  --bar:#c99a7d; --bar2:#86a7b5; --shadow:none;}}
+:root[data-theme="dark"]{
+  --bg:#1b1916; --paper:#24211d; --ink:#ece6dd; --muted:#a59a8d; --line:#3a352f;
+  --accent:#e08a74; --accent-soft:#3c2a24; --ok:#7cc79a; --ok-soft:#1f3328; --bad:#ef8a7d; --bad-soft:#3d2421;
+  --bar:#c99a7d; --bar2:#86a7b5; --shadow:none;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Serif TC","PMingLiU","新細明體",serif;line-height:1.8}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer}
+.brand .logo{width:42px;height:42px;border-radius:8px;flex:none}
+.brand b{font-size:1.25rem;font-weight:900;letter-spacing:.12em}
+.brand small{display:block;font-size:.75rem;color:var(--muted);letter-spacing:.05em;line-height:1.2}
+nav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav button{border:0;background:none;color:var(--muted);font:inherit;font-size:.95rem;padding:6px 14px;border-radius:999px;cursor:pointer}
+nav button:hover{color:var(--accent)}
+nav button.on{background:var(--accent);color:#fff;font-weight:600}
+main{padding:20px 0 70px}
+
+/* ---------- art slots ---------- */
+.art{position:relative;overflow:hidden;background:var(--accent-soft)}
+.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.art .ph{position:absolute;inset:8px;border:2px dashed color-mix(in srgb,var(--accent) 45%,transparent);border-radius:10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2px;
+  color:var(--accent);font-size:.8rem;font-family:ui-monospace,Consolas,monospace;padding:6px;line-height:1.4}
+.art .ph b{font-size:.95rem}
+.art.loaded .ph{display:none}
+.art.icon .ph{display:none}
+.art.icon.loaded .fb{display:none}
+.art.icon:not(.loaded) img{display:none}
+.art:not(.loaded) img{display:none}
+
+/* ---------- hero ---------- */
+.hero{border-radius:var(--radius);aspect-ratio:12/5;min-height:300px;box-shadow:var(--shadow)}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,20,12,.62) 0%,rgba(30,20,12,.28) 45%,rgba(30,20,12,0) 70%);pointer-events:none}
+.art:not(.loaded) .veil{background:linear-gradient(90deg,rgba(162,59,42,.85),rgba(162,59,42,.25) 60%,transparent)}
+.hero .copy{position:absolute;left:6%;top:50%;transform:translateY(-50%);max-width:min(560px,80%);color:var(--hero-ink);z-index:2}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;letter-spacing:.18em;margin:0;line-height:1.2;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+.hero .sub{font-size:clamp(.85rem,1.5vw,1rem);letter-spacing:.2em;opacity:.9;margin-top:4px}
+.hero .motto{font-size:clamp(1.05rem,2vw,1.35rem);font-weight:700;letter-spacing:.08em;margin:14px 0 4px}
+.hero .cta{margin-top:16px}
+.hero p{margin:6px 0;font-size:clamp(.9rem,1.6vw,1.05rem);opacity:.95}
+.hero .ph{inset:12px 12px auto auto;width:auto;height:auto;border-style:dashed;background:rgba(255,255,255,.85);padding:4px 10px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font:inherit;font-size:.95rem;border:1px solid var(--accent);background:var(--accent);color:#fff;padding:7px 18px;border-radius:999px;cursor:pointer}
+.btn.ghost{background:none;color:var(--accent)}
+.btn.light{background:#fffaf0;color:var(--accent);border-color:#fffaf0}
+.btn.line{background:transparent;color:#fffaf0;border-color:rgba(255,250,240,.8)}
+.btn:disabled{opacity:.4;cursor:default}
+
+/* ---------- page banner ---------- */
+.banner{border-radius:var(--radius);aspect-ratio:4/1;min-height:150px;margin-bottom:18px;box-shadow:var(--shadow)}
+.banner .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,20,12,.55),rgba(30,20,12,0) 60%)}
+.art:not(.loaded).banner .veil{background:linear-gradient(90deg,rgba(162,59,42,.8),transparent 70%)}
+.banner .copy{position:absolute;left:5%;top:50%;transform:translateY(-50%);color:var(--hero-ink);z-index:2}
+.banner h2{all:unset;display:block;font-size:clamp(1.4rem,3.2vw,2.1rem);font-weight:900;letter-spacing:.15em}
+.banner p{margin:4px 0 0;font-size:.92rem;opacity:.95}
+.banner .ph{inset:auto 10px 10px auto;background:rgba(255,255,255,.85);padding:4px 10px}
+
+/* ---------- common ---------- */
+h2{font-size:1.25rem;margin:34px 0 14px;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:6px;height:22px;background:var(--accent);border-radius:3px}
+h3{font-size:1.05rem;margin:20px 0 8px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:14px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-top:-46px;position:relative;z-index:3;padding:0 3%}
+.kpi .n{font-size:1.9rem;font-weight:900;color:var(--accent);line-height:1.2}
+.kpi .l{color:var(--muted);font-size:.86rem}
+.meta{color:var(--muted);font-size:.86rem}
+.tag{display:inline-block;font-size:.75rem;padding:0 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin:2px 4px 2px 0;white-space:nowrap}
+.tag.g{background:var(--line);color:var(--ink)}
+.empty{color:var(--muted);text-align:center;padding:30px}
+.hidden{display:none !important}
+
+/* ---------- genre cards ---------- */
+.genres{grid-template-columns:repeat(3,1fr)}
+.gcard{padding:0;overflow:hidden;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.gcard:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(70,45,20,.13)}
+.gcard .art{aspect-ratio:4/3}
+.gcard .body{padding:10px 14px 14px}
+.gcard .name{font-weight:900;font-size:1.05rem;display:flex;justify-content:space-between;align-items:baseline}
+.gcard .name span{font-size:.8rem;color:var(--accent);font-weight:600}
+.gcard .desc{font-size:.82rem;color:var(--muted);line-height:1.6;margin-top:2px}
+
+/* ---------- levels & type chips ---------- */
+.levels{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.level{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;cursor:pointer;transition:transform .15s,border-color .15s}
+.level:hover{transform:translateY(-2px);border-color:var(--accent)}
+.level .lv{width:64px;height:64px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:.95rem;letter-spacing:-.05em}
+.level b{font-size:1.1rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:6px 14px;border-radius:999px;cursor:pointer}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip span{margin-left:6px;font-size:.78rem;color:var(--muted)}
+
+/* ---------- charts ---------- */
+.bars{display:flex;flex-direction:column;gap:6px}
+.bar{display:grid;grid-template-columns:110px 1fr 40px;align-items:center;gap:8px;font-size:.88rem}
+.bar .t{height:12px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--bar);border-radius:6px}
+.bar .v{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.cols{display:flex;align-items:flex-end;gap:4px;height:200px;padding-top:10px;overflow-x:auto}
+.cols .c{flex:1 0 18px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;min-width:18px}
+.cols .c i{width:100%;background:var(--bar);border-radius:4px 4px 0 0}
+.cols .c i.hk{background:var(--bar2)}
+.cols .c span{font-size:.62rem;color:var(--muted);writing-mode:vertical-rl;margin-top:4px;height:66px}
+.legend{font-size:.82rem;color:var(--muted);display:flex;gap:14px;margin-top:6px}
+.legend b{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:middle}
+.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+table.cmp{border-collapse:collapse;width:100%;font-size:.92rem}
+table.cmp td,table.cmp th{border-bottom:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+table.cmp th{color:var(--accent);font-weight:600}
+
+/* ---------- filters & list ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;padding:12px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+select,input[type=search],input[type=number]{font:inherit;font-size:.9rem;padding:5px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.list{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;cursor:pointer;padding:14px 18px}
+.row:hover{border-color:var(--accent)}
+.row .ttl{font-weight:600}
+
+/* ---------- practice ---------- */
+.qcard{margin-top:14px}
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.progress{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:12px}
+.progress i{display:block;height:100%;background:var(--accent)}
+.qimg{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff;display:block}
+.answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:14px}
+.qblock{padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.opts{display:flex;gap:8px;margin-top:6px}
+.opt{font:inherit;flex:1;padding:6px 0;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer;font-weight:900}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft);color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}
+.nav2{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:8px;flex-wrap:wrap}
+.ex{margin-top:18px;border-top:1px dashed var(--line);padding-top:14px}
+.ex section{margin-bottom:16px}
+.ex .lab{font-weight:900;color:var(--accent);font-size:.92rem;margin-bottom:2px}
+.passage{white-space:pre-wrap;background:var(--bg);padding:12px 14px;border-radius:8px;border-left:3px solid var(--bar)}
+.kw{display:flex;flex-wrap:wrap;gap:6px}
+.kw span{border:1px solid var(--line);border-radius:8px;padding:1px 9px;font-size:.9rem;background:var(--paper)}
+.kw b{color:var(--accent)}
+.skill{background:var(--ok-soft);border-left:4px solid var(--ok);padding:8px 12px;border-radius:6px;margin-top:6px}
+.score{font-size:1.15rem;font-weight:900}
+.switch{font-size:.85rem;color:var(--accent);cursor:pointer;user-select:none;border-bottom:1px dashed}
+.txtv .qblock{background:var(--paper);margin-top:8px}
+
+/* ---------- method ---------- */
+.method{font-size:1rem}
+.method h2:first-child{margin-top:0}
+.method table{border-collapse:collapse;width:100%;font-size:.92rem;margin:8px 0}
+.method td,.method th{border:1px solid var(--line);padding:7px 9px;vertical-align:top;text-align:left}
+.method th{background:var(--accent-soft)}
+.method .step{display:grid;grid-template-columns:64px 1fr;gap:14px;margin:14px 0;align-items:start}
+.method .step .num{width:60px;height:60px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.3rem;overflow:hidden;position:relative}
+.method .step .num img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.method a{color:var(--accent)}
+.yue{font-family:"DFKai-SB","BiauKai","標楷體","Kaiti TC",serif;font-weight:400;font-size:1.15em;letter-spacing:.05em}
+
+/* ---------- empty state ---------- */
+.emptyart{max-width:260px;margin:10px auto;aspect-ratio:1;border-radius:50%}
+footer{color:var(--muted);font-size:.8rem;text-align:center;padding:30px 0 40px}
+@media (max-width:640px){
+  .bar{grid-template-columns:80px 1fr 34px}
+  nav{margin-left:0;width:100%;justify-content:space-between}
+  nav button{padding:5px 9px}
+  .hero{aspect-ratio:auto;height:auto;min-height:0;background:#3a2a1e}
+  .hero img{position:static;height:auto;aspect-ratio:16/9}
+  .hero .veil{display:none}
+  .hero .copy{position:static;transform:none;max-width:none;padding:16px 18px 22px}
+  .kpis{margin-top:14px;padding:0;grid-template-columns:repeat(2,1fr);gap:10px}
+  .kpi{padding:12px}
+  .kpi .n{font-size:1.5rem}
+  .banner{aspect-ratio:auto;height:140px}
+  .genres{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap top">
+  <div class="brand" data-go="overview">
+    <div class="art logo" data-art="logo" data-size="512×512"></div>
+    <div><b>字裡山河</b><small>技高文言閱讀・統測歷屆試題練習</small></div>
+  </div>
+  <nav id="nav">
+    <button data-v="overview" class="on">首頁</button>
+    <button data-v="method">解題方法</button>
+    <button data-v="bank">題庫</button>
+    <button data-v="practice">練習</button>
+    <button data-v="wrong">錯題本</button>
+  </nav>
+</div></header>
+<main class="wrap">
+  <div id="v-overview"></div>
+  <div id="v-method" class="hidden">
+    <div class="art banner" data-art="banner-method" data-size="2400×600"><div class="veil"></div><div class="copy"><h2>讀文言文的方法</h2><p>七個步驟，帶你一句一句讀懂</p></div></div>
+    <div class="card method" id="methodBox"></div>
+  </div>
+  <div id="v-bank" class="hidden">
+    <div class="art banner" data-art="banner-bank" data-size="2400×600"><div class="veil"></div><div class="copy"><h2>題庫</h2><p>依年份、文章種類、題型找題目，點一下就能作答</p></div></div>
+    <div id="bankBox"></div>
+  </div>
+  <div id="v-practice" class="hidden">
+    <div class="art banner" data-art="banner-practice" data-size="2400×600"><div class="veil"></div><div class="copy"><h2>練習</h2><p>看考卷原題作答，對完答案就有白話翻譯和解析</p></div></div>
+    <div id="practiceBox"></div>
+  </div>
+  <div id="v-wrong" class="hidden">
+    <div class="art banner" data-art="banner-wrong" data-size="2400×600"><div class="veil"></div><div class="copy"><h2>錯題本</h2><p>做錯的題目都會存在這裡，再做一次就會了</p></div></div>
+    <div id="wrongBox"></div>
+  </div>
+</main>
+<footer class="wrap">題目來源：歷屆四技二專統一入學測驗國文科（技專校院入學測驗中心公布試題）　｜　僅供課堂練習使用　｜　<a href="../../et/site/index.html" style="color:inherit">二技版 →</a></footer>
+<script src="data.js"></script>
+<script>
+const ITEMS = window.ITEMS || [], EXAMS = window.EXAMS || [];
+const GENRES = ['寓言故事','史傳人物','說理議論','山水遊記','筆記小品','書信序跋','經典語錄','古典詩詞曲','其他'];
+const GENRE_INFO = {
+  '寓言故事':['g-fable','故事雖短，留下的問題很長。'],
+  '史傳人物':['g-history','走進古人的選擇，看見性情與風骨。'],
+  '說理議論':['g-argument','跟著作者的思路，想一想道理如何成立。'],
+  '山水遊記':['g-travel','隨文字行過山水，讀見沿途的風景與心境。'],
+  '筆記小品':['g-notes','從一則見聞，讀見世間百態。'],
+  '書信序跋':['g-letter','紙上的叮嚀與心意，隔了歲月依然可讀。'],
+  '經典語錄':['g-classics','細讀簡短的話語，想想生活中的道理。'],
+  '古典詩詞曲':['g-poetry','在景物與聲韻之間，聽見詩人的心情。'],
+  '其他':['g-other','從對聯、題辭與生活文字，認識古人的日常。']
+};
+const TYPES = ['字詞解釋','虛詞句式','句意理解','文意推論','主旨寓意','人物情感','寫作手法','比較閱讀','文化常識','典故出處','詩詞賞析'];
+const TYPE_LABEL = {
+  '字詞解釋':'這個字是什麼意思','虛詞句式':'之乎者也與句型','句意理解':'這句話在說什麼','文意推論':'從文章推想答案',
+  '主旨寓意':'文章想告訴我們什麼','人物情感':'人物的心情與個性','寫作手法':'作者怎麼寫的','比較閱讀':'兩篇文章比一比',
+  '文化常識':'古人的生活常識','典故出處':'典故與名句','詩詞賞析':'讀懂古詩詞'
+};
+const tl = t => TYPE_LABEL[t] || t;
+const STARS = {'易':'★','中':'★★','難':'★★★'};
+/* 出處欄裡給老師看的備註（待查、推測）不顯示給學生 */
+function cleanSrc(s){
+  s = String(s || '').replace(/[（(][^（）()]*(待查|一般認為|推測|疑為)[^（）()]*[）)]/g, '').replace(/[；;，,]\s*其餘[^；;]*$/,'').trim();
+  return /待查|命題者/.test(s) ? '' : s;
+}
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem('wywtc:'+k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem('wywtc:'+k, JSON.stringify(v)); }catch(e){} }
+};
+let wrong = store.get('wrong', {});
+let done = store.get('done', {});
+
+/* ---------- art slots: art/<name>.jpg → .png → .webp, otherwise show a placeholder ---------- */
+const EXTS = ['webp','png','jpg'];
+function mountArt(root = document){
+  root.querySelectorAll('.art[data-art]:not([data-mounted])').forEach(el => {
+    el.dataset.mounted = 1;
+    const name = el.dataset.art, size = el.dataset.size || '';
+    const ph = document.createElement('div'); ph.className = 'ph';
+    ph.innerHTML = (el.classList.contains('logo') || el.classList.contains('icon')) ? '' : `<b>art/${name}.jpg</b><span>${size}</span>`;
+    const img = new Image(); img.alt = ''; let i = 0;
+    img.onload = () => el.classList.add('loaded');
+    img.onerror = () => { if (++i < EXTS.length) img.src = `art/${name}.${EXTS[i]}`; };
+    img.src = `art/${name}.${EXTS[0]}`;
+    el.prepend(img); el.appendChild(ph);
+  });
+}
+function art(name, size, cls = '', inner = ''){ return `<div class="art ${cls}" data-art="${name}" data-size="${size}">${inner}</div>`; }
+
+/* ---------- nav ---------- */
+function show(v){
+  document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  document.querySelectorAll('main > div').forEach(d => d.classList.toggle('hidden', d.id !== 'v-' + v));
+  if (v === 'wrong') renderWrong();
+  if (v === 'overview') renderOverview();
+  window.scrollTo(0, 0);
+}
+document.addEventListener('click', e => { const t = e.target.closest('[data-v],[data-go]'); if (t && (t.closest('#nav') || t.dataset.go)) show(t.dataset.v || t.dataset.go); });
+
+/* ---------- overview ---------- */
+function bars(counts, keys, color){
+  const max = Math.max(1, ...keys.map(k => counts[k] || 0));
+  return '<div class="bars">' + keys.filter(k => counts[k]).map(k =>
+    `<div class="bar"><span>${esc(k)}</span><span class="t"><i style="width:${(counts[k]/max*100).toFixed(1)}%;${color?'background:'+color:''}"></i></span><span class="v">${counts[k]}</span></div>`).join('') + '</div>';
+}
+const LEVELS = [
+  {name:'初讀・從一句開始', star:'★', desc:'從簡短單題讀起，認識字詞，找出句子裡的線索。', preset:{form:'單題', diff:'易'}},
+  {name:'入文・讀懂一篇', star:'★★', desc:'讀一整段文章，連起前後文，回答兩三題。', preset:{form:'題組'}},
+  {name:'探意・多想一層', star:'★★★', desc:'練習較有挑戰的題目，讀出言外之意，讓判斷更有依據。', preset:{diff:'難'}}
+];
+function countQ(list){ return list.reduce((s, i) => s + (i.questions||[]).length, 0); }
+function renderOverview(){
+  const nq = countQ(ITEMS);
+  const gq = {}, tq = {};
+  ITEMS.forEach(i => {
+    gq[i.genre] = (gq[i.genre]||0) + (i.questions||[]).length;
+    (i.types||[]).forEach(x => tq[x] = (tq[x]||0) + (i.questions||[]).length);
+  });
+  const mine = Object.keys(done).length, right = Object.values(done).filter(Boolean).length;
+  const nWrong = Object.keys(wrong).length;
+  const base = {kind:'', y0:EXAMS[0]?.year, y1:EXAMS[EXAMS.length-1]?.year, genre:'', type:'', form:'', diff:'', q:''};
+  $('#v-overview').innerHTML = `
+  ${art('hero', '2400×1000', 'hero', `<div class="veil"></div><div class="copy">
+      <h1>字裡山河</h1>
+      <div class="sub">技高文言閱讀・統測歷屆試題練習</div>
+      <div class="motto">一字一句，都是練得成的功夫。</div>
+      <p>匠人把心思做進器物，古人把心事寫進文字。看懂一件好作品要眼力，讀懂一段古文也一樣，多看、多想，就會越來越準。</p>
+      <p>這裡整理統測歷屆文言試題，搭配白話翻譯、逐項解析與判讀方法，陪你從字詞找到線索，一題一題練出讀懂古文的手感。</p>
+      <div class="cta"><button class="btn light" data-go="practice">開始練習</button><button class="btn line" data-go="method">學習判讀方法</button></div>
+    </div>`)}
+  <div class="grid kpis">
+    <div class="card kpi"><div class="n">${mine}</div><div class="l">我已經做了幾題</div></div>
+    <div class="card kpi"><div class="n">${mine ? Math.round(right/mine*100)+'%' : '—'}</div><div class="l">我的答對率</div></div>
+    <div class="card kpi" style="cursor:pointer" data-go="wrong"><div class="n">${nWrong}</div><div class="l">錯題本裡的題目 →</div></div>
+    <div class="card kpi"><div class="n">${nq}</div><div class="l">題目可以練</div></div>
+  </div>
+  <h2>從一篇讀懂開始</h2>
+  <div class="grid levels">${LEVELS.map((l, k) => {
+    const n = countQ(applyFilters({...base, ...l.preset}));
+    return `<div class="card level" data-level="${k}">${art('lv-'+(k+1), '800×800', 'lv icon', `<span class="fb">${l.star}</span>`)}<div><b>${l.name}</b>　<span class="meta">${n} 題</span><div class="meta">${l.desc}</div></div></div>`;
+  }).join('')}</div>
+  <h2>在不同篇章裡相逢</h2>
+  <div class="grid genres">${GENRES.filter(x => gq[x]).map(x => `
+    <div class="card gcard" data-genre="${x}">${art(GENRE_INFO[x][0], '1200×900')}
+      <div class="body"><div class="name">${x}<span>${gq[x]} 題</span></div><div class="desc">${GENRE_INFO[x][1]}</div></div>
+    </div>`).join('')}</div>
+  <h2>循著問題，細讀字句</h2>
+  <div class="chips">${TYPES.filter(x => tq[x]).map(x => `<button class="chip" data-type="${x}">${tl(x)}<span>${tq[x]}</span></button>`).join('')}</div>`;
+  document.querySelectorAll('.gcard').forEach(c => c.onclick = () => openBank({genre: c.dataset.genre}));
+  document.querySelectorAll('.chip').forEach(c => c.onclick = () => openBank({type: c.dataset.type}));
+  document.querySelectorAll('.level').forEach(c => c.onclick = () => startPreset(LEVELS[+c.dataset.level].preset));
+  mountArt($('#v-overview'));
+}
+function startPreset(preset){
+  const box = $('#fp');
+  box.querySelectorAll('[data-f]').forEach(el => { if (['kind','genre','type','form','diff','q'].includes(el.dataset.f)) el.value = ''; });
+  Object.entries(preset).forEach(([k,v]) => { const el = box.querySelector(`[data-f="${k}"]`); if (el) el.value = v; });
+  $('#go').click();
+}
+
+/* ---------- filters ---------- */
+function filterUI(id, extra=''){
+  const years = [...new Set(EXAMS.map(e => e.year))].sort((a,b)=>a-b);
+  return `<div class="filters" id="${id}">
+    <select data-f="kind" hidden><option value="">統測</option></select>
+    <select data-f="y0">${years.map((y,i)=>`<option ${i===0?'selected':''}>${y}</option>`).join('')}</select>～
+    <select data-f="y1">${years.map((y,i)=>`<option ${i===years.length-1?'selected':''}>${y}</option>`).join('')}</select>
+    <select data-f="genre"><option value="">全部文章</option>${GENRES.map(x=>`<option>${x}</option>`).join('')}</select>
+    <select data-f="type"><option value="">全部題型</option>${TYPES.map(x=>`<option value="${x}">${tl(x)}</option>`).join('')}</select>
+    <select data-f="form"><option value="">單題＋題組</option><option>單題</option><option>題組</option></select>
+    <select data-f="diff"><option value="">全部難度</option><option value="易">★ 簡單</option><option value="中">★★ 普通</option><option value="難">★★★ 困難</option></select>
+    <input type="search" data-f="q" placeholder="搜尋作者、篇名、原文…" style="flex:1;min-width:140px">
+    ${extra}</div>`;
+}
+function readFilters(id){ const f = {}; document.querySelectorAll(`#${id} [data-f]`).forEach(el => f[el.dataset.f] = el.value); return f; }
+function applyFilters(f){
+  return ITEMS.filter(i => (!f.kind || i.kind===f.kind) && i.year >= +f.y0 && i.year <= +f.y1 &&
+    (!f.genre || i.genre===f.genre) && (!f.type || (i.types||[]).includes(f.type)) && (!f.form || i.form===f.form) &&
+    (!f.diff || i.difficulty===f.diff) &&
+    (!f.q || [i.source,i.author,i.passage,i.translation,i.label].join(' ').includes(f.q)));
+}
+
+/* ---------- bank ---------- */
+function itemRow(i){
+  const nums = (i.questions||[]).map(q=>q.n);
+  const qlabel = nums.length > 1 ? `第 ${nums[0]}～${nums[nums.length-1]} 題` : `第 ${nums[0]} 題`;
+  return `<div class="card row" data-id="${esc(i.id)}"><div>
+    <div class="ttl">${esc(i.label)}・${qlabel}　<span class="meta">${esc(cleanSrc(i.source))}</span></div>
+    <div><span class="tag g">${esc(i.form)}</span><span class="tag g">${esc(i.genre)}</span>${(i.types||[]).map(t=>`<span class="tag">${esc(tl(t))}</span>`).join('')}<span class="tag g">${STARS[i.difficulty]||''}</span></div>
+  </div><div class="meta">${statusOf(i)}</div></div>`;
+}
+function statusOf(i){
+  const r = (i.questions||[]).map(q => done[i.id+'#'+q.n]);
+  if (r.every(x => x === undefined)) return '未作答';
+  return r.map(x => x===true ? '○' : x===false ? '✕' : '・').join('');
+}
+function renderBank(){
+  $('#bankBox').innerHTML = filterUI('fb') + '<div class="meta" id="bankCount"></div><div class="list" id="bankList" style="margin-top:8px"></div>';
+  $('#fb').addEventListener('input', updBank); updBank();
+  $('#bankList').onclick = e => { const r = e.target.closest('[data-id]'); if (r) startPractice([ITEMS.find(i=>i.id===r.dataset.id)], 0); };
+}
+function updBank(){
+  const list = applyFilters(readFilters('fb'));
+  $('#bankCount').textContent = `共 ${list.length} 組、${list.reduce((s,i)=>s+(i.questions||[]).length,0)} 題（點一下開始作答）`;
+  $('#bankList').innerHTML = list.map(itemRow).join('') || '<div class="empty">沒有符合條件的題目</div>';
+}
+function openBank(preset){
+  document.querySelectorAll('#fb [data-f]').forEach(el => { if (['kind','genre','type','form','diff','q'].includes(el.dataset.f)) el.value = ''; });
+  Object.entries(preset).forEach(([k,v]) => { const el = $(`#fb [data-f="${k}"]`); if (el) el.value = v; });
+  updBank(); show('bank');
+}
+
+/* ---------- practice ---------- */
+let queue = [], qi = 0;
+function renderPracticeHome(){
+  $('#practiceBox').innerHTML = `<p class="meta" style="margin-top:0">選好想練的範圍，按「開始練習」。不知道從哪裡開始？回首頁點「初讀」就對了。</p>` + filterUI('fp', `<label class="meta">題數 <input type="number" data-f="n" value="10" min="1" max="200" style="width:64px"></label>
+    <select data-f="order"><option value="rand">隨機</option><option value="seq">依年代</option><option value="new">只做沒做過的</option></select>
+    <button class="btn" id="go">開始練習</button>`) + '<div id="pArea"></div>';
+  $('#go').onclick = () => {
+    const f = readFilters('fp'); let list = applyFilters(f);
+    if (f.order === 'new') list = list.filter(i => (i.questions||[]).every(q => done[i.id+'#'+q.n] === undefined));
+    if (f.order !== 'seq') list = list.sort(() => Math.random() - .5);
+    const n = Math.max(1, +f.n || 10), out = []; let c = 0;
+    for (const i of list){ if (c >= n) break; out.push(i); c += (i.questions||[]).length; }
+    if (!out.length){ $('#pArea').innerHTML = '<div class="empty">沒有符合條件的題目</div>'; return; }
+    startPractice(out, 0);
+  };
+}
+function startPractice(list, idx){ queue = list; qi = idx; show('practice'); renderQ(); }
+function renderQ(){
+  const i = queue[qi]; if (!i) return;
+  const qs = i.questions || [];
+  $('#pArea').innerHTML = `<div class="card qcard">
+    <div class="progress"><i style="width:${(qi+1)/queue.length*100}%"></i></div>
+    <div class="qhead"><div><b>${esc(i.label)}</b>　<span class="meta">第 ${qi+1} / ${queue.length} 組　${STARS[i.difficulty]||''}</span></div>
+      <span class="switch" id="txtTog">顯示文字版</span></div>
+    <img class="qimg" src="${esc(i.img)}" alt="${esc(i.label)} 原題截圖">
+    <div id="txtVer" class="hidden txtv">${i.passage && i.form==='題組' ? `<div class="qblock passage">${esc(i.passage)}</div>` : ''}
+      ${qs.map(q => `<div class="qblock"><b>${q.n}.</b> ${esc(q.stem)}<br>${Object.entries(q.options||{}).map(([k,v])=>`(${k}) ${esc(v)}`).join('<br>')}</div>`).join('')}</div>
+    <div class="answers">${qs.map(q => `<div class="qblock" data-n="${q.n}"><b>第 ${q.n} 題</b><div class="opts">${['A','B','C','D'].map(k=>`<button class="opt" data-k="${k}">${k}</button>`).join('')}</div></div>`).join('')}</div>
+    <div class="nav2"><button class="btn ghost" id="prev" ${qi?'':'disabled'}>上一組</button>
+      <button class="btn" id="check">對答案・看解析</button>
+      <button class="btn ghost" id="next" ${qi<queue.length-1?'':'disabled'}>下一組</button></div>
+    <div id="exBox"></div></div>`;
+  const area = $('#pArea'), pick = {};
+  area.querySelectorAll('.qblock[data-n]').forEach(b => b.onclick = e => {
+    const k = e.target.dataset.k; if (!k || b.dataset.locked) return;
+    pick[b.dataset.n] = k; b.querySelectorAll('.opt').forEach(o => o.classList.toggle('sel', o.dataset.k === k));
+  });
+  $('#txtTog').onclick = () => $('#txtVer').classList.toggle('hidden');
+  $('#prev').onclick = () => { qi--; renderQ(); area.scrollIntoView(); };
+  $('#next').onclick = () => { qi++; renderQ(); area.scrollIntoView(); };
+  $('#check').onclick = () => {
+    let r = 0;
+    qs.forEach(q => {
+      const b = area.querySelector(`.qblock[data-n="${q.n}"]`); b.dataset.locked = 1;
+      const p = pick[q.n], key = i.id+'#'+q.n, ok = p === q.answer;
+      b.querySelectorAll('.opt').forEach(o => { if (o.dataset.k===q.answer) o.classList.add('right'); else if (o.dataset.k===p) o.classList.add('wrong'); });
+      if (p){ done[key] = ok; if (ok) r++; else wrong[key] = {times:(wrong[key]?.times||0)+1, last:Date.now()}; }
+    });
+    store.set('done', done); store.set('wrong', wrong);
+    $('#check').disabled = true;
+    const cheer = r === qs.length ? '全對，太厲害了！' : r ? '不錯喔，看看錯的那題為什麼錯。' : '沒關係，看完解析再試一次就會了。';
+    $('#exBox').innerHTML = `<div class="ex"><p class="score">答對 ${r} / ${qs.length}　<span class="meta">${cheer}</span></p>` + explain(i) + '</div>';
+  };
+}
+function explain(i){
+  const kws = (i.keywords||[]).map(k => `<span><b>${esc(k.w)}</b>：${esc(k.m)}</span>`).join('');
+  return `${i.passage ? `<section><div class="lab">原文</div><div class="passage">${esc(i.passage)}</div></section>` : ''}
+    ${i.translation ? `<section><div class="lab">白話翻譯</div><div>${esc(i.translation)}</div></section>` : ''}
+    ${kws ? `<section><div class="lab">重要字詞</div><div class="kw">${kws}</div></section>` : ''}
+    ${(i.questions||[]).map(q => `<section><div class="lab">第 ${q.n} 題　答案是 (${esc(q.answer)})</div><div>${esc(q.explain)}</div>
+      ${q.skill ? `<div class="skill">解題小撇步：${esc(q.skill)}</div>` : ''}</section>`).join('')}
+    <div class="meta">${cleanSrc(i.source) ? '出自：' + esc(cleanSrc(i.source)) + '　｜　' : ''}${esc(i.genre)}　｜　難度 ${STARS[i.difficulty]||''}</div>`;
+}
+
+/* ---------- wrong book ---------- */
+function renderWrong(){
+  const last = id => Math.max(...Object.entries(wrong).filter(([k])=>k.startsWith(id+'#')).map(([,v])=>v.last));
+  const ids = [...new Set(Object.keys(wrong).map(k => k.split('#')[0]))];
+  const list = ids.map(id => ITEMS.find(i => i.id === id)).filter(Boolean).sort((a,b) => last(b.id) - last(a.id));
+  const tc = {}; list.forEach(i => (i.types||[]).forEach(t => { tc[tl(t)] = (tc[tl(t)]||0) + 1; }));
+  $('#wrongBox').innerHTML = list.length ? `
+    <div class="card"><h3 style="margin-top:0">我最常錯的題型</h3><p class="meta" style="margin-top:0">最長的那一條，就是你最需要多練的地方。</p>${bars(tc, TYPES.map(tl), 'var(--bad)')}</div>
+    <div class="nav2"><span class="meta">共 ${list.length} 組錯題（只存在這台電腦上）</span>
+      <span><button class="btn" id="redo">全部重做</button> <button class="btn ghost" id="clr">清空錯題本</button></span></div>
+    <div class="list" style="margin-top:10px">${list.map(itemRow).join('')}</div>` :
+    `<div class="card empty">${art('empty', '800×800', 'emptyart')}<p>還沒有錯題。去「練習」做幾題吧！</p><button class="btn" data-go="practice">去練習</button></div>`;
+  mountArt($('#wrongBox'));
+  if (!list.length) return;
+  $('#redo').onclick = () => startPractice(list, 0);
+  $('#clr').onclick = () => { if (confirm('確定清空錯題本？')){ wrong = {}; store.set('wrong', wrong); renderWrong(); } };
+  $('#wrongBox .list').onclick = e => { const r = e.target.closest('[data-id]'); if (r) startPractice(list, list.findIndex(i=>i.id===r.dataset.id)); };
+}
+
+/* ---------- method: step icons art/step1..7 replace the number when present ---------- */
+function renderMethod(){
+  $('#methodBox').innerHTML = window.METHOD || '<p class="meta">（拆解心法整理中）</p>';
+  document.querySelectorAll('#methodBox .step .num').forEach((n, k) => {
+    const img = new Image(); let i = 0;
+    img.onload = () => n.appendChild(img);
+    img.onerror = () => { if (++i < EXTS.length) img.src = `art/step${k+1}.${EXTS[i]}`; };
+    img.src = `art/step${k+1}.${EXTS[0]}`;
+  });
+}
+
+renderOverview(); renderMethod(); renderBank(); renderPracticeHome(); mountArt();
+</script>
+</body>
+</html>

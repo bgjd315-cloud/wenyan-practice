@@ -22,3 +22,23 @@ hs/生圖清單.json
 # 教師研究報告只留本機
 hs/site/teacher.html
 icons-生圖清單.json
+
+# 統測／二技研究只留本機
+tc/raw/research*.md
+et/raw/research*.md
+tc/raw/analysis*.md
+et/raw/analysis*.md
+tc/site/teacher.html
+et/site/teacher.html
+vt-生圖清單.json
+# 統測／二技原始檔與中間產物
+tc/raw/*
+!tc/raw/data/
+!tc/raw/method.html
+!tc/raw/BRIEF.md
+et/raw/*
+!et/raw/data/
+!et/raw/method.html
+tc/site/art/_raw/
+et/site/art/_raw/
+_記憶與排程備份/
